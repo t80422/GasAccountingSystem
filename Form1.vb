@@ -23,14 +23,12 @@
         btnCancel_emp.PerformClick()
         btnCancel_perm_Click(btnCancel_perm, e)
         btnCancel_manu_Click(btnCancel_manu, e)
+        btnCancel_cus_Click(btnCancel_cus, e)
 
     End Sub
 
     Private Sub tpLogOut_Enter(sender As Object, e As EventArgs) Handles tpLogOut.Enter
-        If MessageBox.Show("確定要登出嗎??", "登出", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = System.Windows.Forms.DialogResult.OK Then
-            LoginForm1.Show()
-            Close()
-        End If
+        If MessageBox.Show("確定要登出嗎??", "登出", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) = System.Windows.Forms.DialogResult.OK Then Close()
     End Sub
 
     '員工管理-取消
@@ -84,6 +82,12 @@
          }
         If Not CheckRequiredCol(dicReq) Then Return Nothing
 
+        Dim dicDup As New Dictionary(Of String, String) From {
+            {txtEmpName.Tag, txtEmpName.Text},
+            {txtEmpPhone.Tag, txtEmpPhone.Text}
+        }
+        If Not CheckDuplication($"SELECT * FROM employee", dicDup, dgvEmployee) Then Return Nothing
+
         Dim tp As TabPage = sender.Parent
         Dim dic As New Dictionary(Of String, String)
         dic = tp.Controls.OfType(Of Control).Where(Function(ctrl) Not String.IsNullOrEmpty(ctrl.Tag) AndAlso ctrl.Tag <> "emp_id" AndAlso Not String.IsNullOrWhiteSpace(ctrl.Text)).
@@ -102,14 +106,14 @@
     End Sub
 
     '員工管理-查詢
-    Private Sub btnQuery_cus_Click(sender As Object, e As EventArgs) Handles btnQuery_cus.Click
-        GetDataToDgv($"SELECT * FROM employee WHERE emp_name LIKE '%{txtQuery_cus.Text}%' OR emp_phone LIKE '%{txtQuery_cus.Text}%'", dgvEmployee)
+    Private Sub btnQuery_cus_Click(sender As Object, e As EventArgs) Handles btnQuery_emp.Click
+        GetDataToDgv($"SELECT * FROM employee WHERE emp_name LIKE '%{txtQuery_emp.Text}%' OR emp_phone LIKE '%{txtQuery_emp.Text}%'", dgvEmployee)
         dgvEmployee.Columns("emp_perm").Visible = False
         MsgBox("查詢完畢")
     End Sub
 
     '搜尋欄位按下"Enter"即可搜尋
-    Private Sub txtQuery_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtQuery_cus.KeyPress, txtQuery_perm.KeyPress, txtQuery_manu.KeyPress
+    Private Sub txtQuery_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtQuery_emp.KeyPress, txtQuery_perm.KeyPress, txtQuery_manu.KeyPress, txtQuery_cus.KeyPress
         If e.KeyChar = vbCr Then
             Dim btn As Button = CType(sender, TextBox).Parent.Controls.OfType(Of Button).FirstOrDefault(Function(x) x.Text = "查詢")
             btn.PerformClick()
@@ -223,10 +227,16 @@
     Private Function CheckManufacturer(sender As Button)
         Dim dicReq As New Dictionary(Of String, Object) From {
              {"名稱", txtName_menu},
-             {"聯絡人", txtContact},
+             {"聯絡人", txtContact_manu},
              {"電話1", txtphone1_menu}
          }
         If Not CheckRequiredCol(dicReq) Then Return Nothing
+
+        Dim dicDup As New Dictionary(Of String, String) From {
+            {txtName_menu.Tag, txtName_menu.Text},
+            {txtphone1_menu.Tag, txtphone1_menu.Text}
+        }
+        If Not CheckDuplication($"SELECT * FROM manufacturer", dicDup, dgvManufacturer) Then Return Nothing
 
         Dim tp As TabPage = sender.Parent
         Dim dic As New Dictionary(Of String, String)
@@ -235,7 +245,82 @@
         Return dic
     End Function
 
+    '客戶管理-取消
     Private Sub btnCancel_cus_Click(sender As Object, e As EventArgs) Handles btnCancel_cus.Click
+        ClearControls(sender.Parent)
+        GetDataToDgv("SELECT * FROM customer", dgvCustomer)
+        btnInsert_cus.Enabled = True
+        btnModify_cus.Enabled = False
+        btnDelete_cus.Enabled = False
+    End Sub
 
+    '客戶管理-新增
+    Private Sub btnInsert_cus_Click(sender As Object, e As EventArgs) Handles btnInsert_cus.Click
+        Dim dic As Dictionary(Of String, String) = CheckCustomer(sender)
+        If dic Is Nothing Then Exit Sub
+        If InserTable("customer", dic) Then
+            btnCancel_cus.PerformClick()
+            MsgBox("新增成功")
+        End If
+    End Sub
+
+    Private Function CheckCustomer(sender As Button)
+        Dim dicReq As New Dictionary(Of String, Object) From {
+             {"名稱", txtName_cus},
+             {"聯絡人", txtContact_cus},
+             {"電話1", txtPhone1_cus}
+         }
+        If Not CheckRequiredCol(dicReq) Then Return Nothing
+
+        Dim dicDup As New Dictionary(Of String, String) From {
+            {txtName_cus.Tag, txtName_cus.Text},
+            {txtPhone1_cus.Tag, txtPhone1_cus.Text}
+        }
+        If Not CheckDuplication($"SELECT * FROM customer", dicDup, dgvCustomer) Then Return Nothing
+
+        Dim tp As TabPage = sender.Parent
+        Dim dic As New Dictionary(Of String, String)
+        dic = tp.Controls.OfType(Of Control).Where(Function(ctrl) Not String.IsNullOrEmpty(ctrl.Tag) AndAlso ctrl.Tag <> "cus_id" AndAlso Not String.IsNullOrWhiteSpace(ctrl.Text)).
+            ToDictionary(Function(ctrl) ctrl.Tag.ToString, Function(ctrl) ctrl.Text)
+        Return dic
+    End Function
+
+    '客戶管理-dgv點擊
+    Private Sub dgvCustomer_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvCustomer.CellMouseClick
+        Dim tp = sender.Parent
+        ClearControls(tp)
+        GetDataToControls(tp, sender.SelectedRows(0))
+        btnInsert_cus.Enabled = False
+        btnModify_cus.Enabled = True
+        btnDelete_cus.Enabled = True
+    End Sub
+
+    '客戶管理-修改
+    Private Sub btnModify_cus_Click(sender As Object, e As EventArgs) Handles btnModify_cus.Click
+        Dim dic As Dictionary(Of String, String) = CheckCustomer(sender)
+        If dic Is Nothing Then Exit Sub
+        If UpdateTable("customer", dic, $"{txtID_cus.Tag} = '{txtID_cus.Text}'") Then
+            btnCancel_cus.PerformClick()
+            MsgBox("修改成功")
+        End If
+    End Sub
+
+    '客戶管理-刪除
+    Private Sub btnDelete_cus_Click(sender As Object, e As EventArgs) Handles btnDelete_cus.Click
+        If MsgBox("確定要刪除?", vbYesNo, "警告") = MsgBoxResult.No Then Exit Sub
+        If DeleteData("customer", $"{txtID_cus.Tag} = '{txtID_cus.Text}'") Then
+            btnCancel_cus.PerformClick()
+            MsgBox("刪除成功")
+        End If
+    End Sub
+
+    '客戶管理-查詢
+    Private Sub btnQuery_cus_Click_1(sender As Object, e As EventArgs) Handles btnQuery_cus.Click
+        GetDataToDgv($"SELECT * FROM customer WHERE cus_name LIKE '%{txtQuery_cus.Text}%' OR cus_phone1 LIKE '%{txtQuery_cus.Text}%'", dgvCustomer)
+        MsgBox("查詢完畢")
+    End Sub
+
+    Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        LoginForm1.Show()
     End Sub
 End Class

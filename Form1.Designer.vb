@@ -49,18 +49,21 @@ Partial Class Form1
         Me.客戶保險管理 = New System.Windows.Forms.TabPage()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.Label49 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.txtContact_cus = New System.Windows.Forms.TextBox()
         Me.TextBox16 = New System.Windows.Forms.TextBox()
         Me.TextBox17 = New System.Windows.Forms.TextBox()
         Me.TextBox18 = New System.Windows.Forms.TextBox()
         Me.TextBox19 = New System.Windows.Forms.TextBox()
         Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.txtPhone1_cus = New System.Windows.Forms.TextBox()
+        Me.txtName_cus = New System.Windows.Forms.TextBox()
+        Me.txtID_cus = New System.Windows.Forms.TextBox()
+        Me.txtQuery_cus = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
@@ -71,13 +74,16 @@ Partial Class Form1
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.btnQuery_cus = New System.Windows.Forms.Button()
         Me.btnCancel_cus = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.btnDelete_cus = New System.Windows.Forms.Button()
+        Me.btnModify_cus = New System.Windows.Forms.Button()
+        Me.btnInsert_cus = New System.Windows.Forms.Button()
+        Me.dgvCustomer = New System.Windows.Forms.DataGridView()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
@@ -88,7 +94,7 @@ Partial Class Form1
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.txtContact = New System.Windows.Forms.TextBox()
+        Me.txtContact_manu = New System.Windows.Forms.TextBox()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
@@ -130,8 +136,8 @@ Partial Class Form1
         Me.txtAcc = New System.Windows.Forms.TextBox()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label92 = New System.Windows.Forms.Label()
-        Me.txtQuery_cus = New System.Windows.Forms.TextBox()
-        Me.btnQuery_cus = New System.Windows.Forms.Button()
+        Me.txtQuery_emp = New System.Windows.Forms.TextBox()
+        Me.btnQuery_emp = New System.Windows.Forms.Button()
         Me.btnCancel_emp = New System.Windows.Forms.Button()
         Me.btnDelete_emp = New System.Windows.Forms.Button()
         Me.btnModify_emp = New System.Windows.Forms.Button()
@@ -190,7 +196,7 @@ Partial Class Form1
         Me.TabPage21.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         CType(Me.dgvManufacturer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpEmployee.SuspendLayout()
@@ -469,18 +475,21 @@ Partial Class Form1
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.Label51)
+        Me.TabPage4.Controls.Add(Me.Label50)
+        Me.TabPage4.Controls.Add(Me.Label49)
         Me.TabPage4.Controls.Add(Me.Label19)
         Me.TabPage4.Controls.Add(Me.TextBox14)
-        Me.TabPage4.Controls.Add(Me.TextBox15)
+        Me.TabPage4.Controls.Add(Me.txtContact_cus)
         Me.TabPage4.Controls.Add(Me.TextBox16)
         Me.TabPage4.Controls.Add(Me.TextBox17)
         Me.TabPage4.Controls.Add(Me.TextBox18)
         Me.TabPage4.Controls.Add(Me.TextBox19)
         Me.TabPage4.Controls.Add(Me.TextBox20)
-        Me.TabPage4.Controls.Add(Me.TextBox21)
-        Me.TabPage4.Controls.Add(Me.TextBox22)
-        Me.TabPage4.Controls.Add(Me.TextBox24)
-        Me.TabPage4.Controls.Add(Me.TextBox25)
+        Me.TabPage4.Controls.Add(Me.txtPhone1_cus)
+        Me.TabPage4.Controls.Add(Me.txtName_cus)
+        Me.TabPage4.Controls.Add(Me.txtID_cus)
+        Me.TabPage4.Controls.Add(Me.txtQuery_cus)
         Me.TabPage4.Controls.Add(Me.Label20)
         Me.TabPage4.Controls.Add(Me.Label21)
         Me.TabPage4.Controls.Add(Me.Label22)
@@ -491,12 +500,12 @@ Partial Class Form1
         Me.TabPage4.Controls.Add(Me.Label27)
         Me.TabPage4.Controls.Add(Me.Label29)
         Me.TabPage4.Controls.Add(Me.Label30)
-        Me.TabPage4.Controls.Add(Me.Button6)
+        Me.TabPage4.Controls.Add(Me.btnQuery_cus)
         Me.TabPage4.Controls.Add(Me.btnCancel_cus)
-        Me.TabPage4.Controls.Add(Me.Button8)
-        Me.TabPage4.Controls.Add(Me.Button9)
-        Me.TabPage4.Controls.Add(Me.Button10)
-        Me.TabPage4.Controls.Add(Me.DataGridView4)
+        Me.TabPage4.Controls.Add(Me.btnDelete_cus)
+        Me.TabPage4.Controls.Add(Me.btnModify_cus)
+        Me.TabPage4.Controls.Add(Me.btnInsert_cus)
+        Me.TabPage4.Controls.Add(Me.dgvCustomer)
         Me.TabPage4.Location = New System.Drawing.Point(4, 54)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
@@ -505,11 +514,44 @@ Partial Class Form1
         Me.TabPage4.Text = "客戶管理"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.ForeColor = System.Drawing.Color.Red
+        Me.Label51.Location = New System.Drawing.Point(417, 71)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(20, 19)
+        Me.Label51.TabIndex = 333
+        Me.Label51.Text = "*"
+        Me.Label51.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.ForeColor = System.Drawing.Color.Red
+        Me.Label50.Location = New System.Drawing.Point(20, 71)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(20, 19)
+        Me.Label50.TabIndex = 332
+        Me.Label50.Text = "*"
+        Me.Label50.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.ForeColor = System.Drawing.Color.Red
+        Me.Label49.Location = New System.Drawing.Point(417, 23)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(20, 19)
+        Me.Label49.TabIndex = 331
+        Me.Label49.Text = "*"
+        Me.Label49.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label19.Location = New System.Drawing.Point(279, 91)
+        Me.Label19.Location = New System.Drawing.Point(814, 119)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(95, 19)
         Me.Label19.TabIndex = 330
@@ -517,108 +559,109 @@ Partial Class Form1
         '
         'TextBox14
         '
-        Me.TextBox14.Location = New System.Drawing.Point(382, 88)
+        Me.TextBox14.Location = New System.Drawing.Point(918, 116)
         Me.TextBox14.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(180, 30)
+        Me.TextBox14.Size = New System.Drawing.Size(247, 30)
         Me.TextBox14.TabIndex = 329
         Me.TextBox14.Tag = "cus_tax_id"
         '
-        'TextBox15
+        'txtContact_cus
         '
-        Me.TextBox15.Location = New System.Drawing.Point(382, 48)
-        Me.TextBox15.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(180, 30)
-        Me.TextBox15.TabIndex = 327
-        Me.TextBox15.Tag = "cus_contact_person"
+        Me.txtContact_cus.Location = New System.Drawing.Point(150, 68)
+        Me.txtContact_cus.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.txtContact_cus.Name = "txtContact_cus"
+        Me.txtContact_cus.Size = New System.Drawing.Size(250, 30)
+        Me.txtContact_cus.TabIndex = 327
+        Me.txtContact_cus.Tag = "cus_contact_person"
         '
         'TextBox16
         '
-        Me.TextBox16.Location = New System.Drawing.Point(675, 48)
+        Me.TextBox16.Location = New System.Drawing.Point(915, 68)
         Me.TextBox16.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(180, 30)
+        Me.TextBox16.Size = New System.Drawing.Size(250, 30)
         Me.TextBox16.TabIndex = 325
-        Me.TextBox16.Tag = "手機"
+        Me.TextBox16.Tag = "cus_phone2"
         '
         'TextBox17
         '
-        Me.TextBox17.Location = New System.Drawing.Point(675, 88)
+        Me.TextBox17.Location = New System.Drawing.Point(1286, 68)
         Me.TextBox17.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(180, 30)
+        Me.TextBox17.Size = New System.Drawing.Size(250, 30)
         Me.TextBox17.TabIndex = 323
         Me.TextBox17.Tag = "cus_fax"
         '
         'TextBox18
         '
-        Me.TextBox18.Location = New System.Drawing.Point(382, 8)
+        Me.TextBox18.Location = New System.Drawing.Point(1286, 20)
         Me.TextBox18.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(180, 30)
+        Me.TextBox18.Size = New System.Drawing.Size(250, 30)
         Me.TextBox18.TabIndex = 321
         Me.TextBox18.Tag = "cus_principal"
         '
         'TextBox19
         '
-        Me.TextBox19.Location = New System.Drawing.Point(120, 168)
+        Me.TextBox19.Location = New System.Drawing.Point(150, 164)
         Me.TextBox19.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(735, 30)
+        Me.TextBox19.Size = New System.Drawing.Size(647, 30)
         Me.TextBox19.TabIndex = 319
         Me.TextBox19.Tag = "cus_memo"
         '
         'TextBox20
         '
-        Me.TextBox20.Location = New System.Drawing.Point(120, 128)
+        Me.TextBox20.Location = New System.Drawing.Point(150, 116)
         Me.TextBox20.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(735, 30)
+        Me.TextBox20.Size = New System.Drawing.Size(647, 30)
         Me.TextBox20.TabIndex = 317
         Me.TextBox20.Tag = "cus_address"
         '
-        'TextBox21
+        'txtPhone1_cus
         '
-        Me.TextBox21.Location = New System.Drawing.Point(675, 8)
-        Me.TextBox21.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(180, 30)
-        Me.TextBox21.TabIndex = 315
-        Me.TextBox21.Tag = "cus_phone1"
+        Me.txtPhone1_cus.Location = New System.Drawing.Point(547, 68)
+        Me.txtPhone1_cus.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.txtPhone1_cus.Name = "txtPhone1_cus"
+        Me.txtPhone1_cus.Size = New System.Drawing.Size(250, 30)
+        Me.txtPhone1_cus.TabIndex = 315
+        Me.txtPhone1_cus.Tag = "cus_phone1"
         '
-        'TextBox22
+        'txtName_cus
         '
-        Me.TextBox22.Location = New System.Drawing.Point(120, 8)
-        Me.TextBox22.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.Size = New System.Drawing.Size(150, 30)
-        Me.TextBox22.TabIndex = 313
-        Me.TextBox22.Tag = "cus_name"
+        Me.txtName_cus.Location = New System.Drawing.Point(547, 20)
+        Me.txtName_cus.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.txtName_cus.Name = "txtName_cus"
+        Me.txtName_cus.Size = New System.Drawing.Size(618, 30)
+        Me.txtName_cus.TabIndex = 313
+        Me.txtName_cus.Tag = "cus_name"
         '
-        'TextBox24
+        'txtID_cus
         '
-        Me.TextBox24.Location = New System.Drawing.Point(120, 48)
-        Me.TextBox24.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(150, 30)
-        Me.TextBox24.TabIndex = 309
-        Me.TextBox24.Tag = "cus_id"
+        Me.txtID_cus.Location = New System.Drawing.Point(150, 20)
+        Me.txtID_cus.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.txtID_cus.Name = "txtID_cus"
+        Me.txtID_cus.ReadOnly = True
+        Me.txtID_cus.Size = New System.Drawing.Size(250, 30)
+        Me.txtID_cus.TabIndex = 309
+        Me.txtID_cus.Tag = "cus_id"
         '
-        'TextBox25
+        'txtQuery_cus
         '
-        Me.TextBox25.Location = New System.Drawing.Point(1256, 206)
-        Me.TextBox25.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(168, 30)
-        Me.TextBox25.TabIndex = 307
-        Me.TextBox25.Tag = ""
+        Me.txtQuery_cus.Location = New System.Drawing.Point(1492, 220)
+        Me.txtQuery_cus.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.txtQuery_cus.Name = "txtQuery_cus"
+        Me.txtQuery_cus.Size = New System.Drawing.Size(247, 30)
+        Me.txtQuery_cus.TabIndex = 307
+        Me.txtQuery_cus.Tag = ""
         '
         'Label20
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label20.Location = New System.Drawing.Point(279, 54)
+        Me.Label20.Location = New System.Drawing.Point(46, 71)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(94, 19)
         Me.Label20.TabIndex = 328
@@ -628,18 +671,18 @@ Partial Class Form1
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label21.Location = New System.Drawing.Point(571, 54)
+        Me.Label21.Location = New System.Drawing.Point(814, 71)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(106, 19)
+        Me.Label21.Size = New System.Drawing.Size(84, 19)
         Me.Label21.TabIndex = 326
-        Me.Label21.Tag = "cus_phone2"
-        Me.Label21.Text = "電    話2"
+        Me.Label21.Tag = ""
+        Me.Label21.Text = "電 話 2"
         '
         'Label22
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label22.Location = New System.Drawing.Point(571, 91)
+        Me.Label22.Location = New System.Drawing.Point(1182, 71)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(95, 19)
         Me.Label22.TabIndex = 324
@@ -649,7 +692,7 @@ Partial Class Form1
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label23.Location = New System.Drawing.Point(279, 11)
+        Me.Label23.Location = New System.Drawing.Point(1182, 23)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(94, 19)
         Me.Label23.TabIndex = 322
@@ -659,7 +702,7 @@ Partial Class Form1
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label24.Location = New System.Drawing.Point(16, 171)
+        Me.Label24.Location = New System.Drawing.Point(46, 167)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(95, 19)
         Me.Label24.TabIndex = 320
@@ -669,7 +712,7 @@ Partial Class Form1
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label25.Location = New System.Drawing.Point(16, 131)
+        Me.Label25.Location = New System.Drawing.Point(46, 119)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(95, 19)
         Me.Label25.TabIndex = 318
@@ -679,27 +722,27 @@ Partial Class Form1
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label26.Location = New System.Drawing.Point(571, 11)
+        Me.Label26.Location = New System.Drawing.Point(443, 71)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(106, 19)
+        Me.Label26.Size = New System.Drawing.Size(84, 19)
         Me.Label26.TabIndex = 316
-        Me.Label26.Text = "電    話1"
+        Me.Label26.Text = "電 話 1"
         '
         'Label27
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label27.Location = New System.Drawing.Point(16, 11)
+        Me.Label27.Location = New System.Drawing.Point(443, 23)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(51, 19)
+        Me.Label27.Size = New System.Drawing.Size(95, 19)
         Me.Label27.TabIndex = 314
-        Me.Label27.Text = "名稱"
+        Me.Label27.Text = "名    稱"
         '
         'Label29
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label29.Location = New System.Drawing.Point(16, 51)
+        Me.Label29.Location = New System.Drawing.Point(46, 23)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(95, 19)
         Me.Label29.TabIndex = 310
@@ -708,74 +751,77 @@ Partial Class Form1
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(1143, 209)
+        Me.Label30.Location = New System.Drawing.Point(1388, 223)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(95, 19)
         Me.Label30.TabIndex = 308
         Me.Label30.Text = "搜    尋"
         '
-        'Button6
+        'btnQuery_cus
         '
-        Me.Button6.BackColor = System.Drawing.Color.Lime
-        Me.Button6.Location = New System.Drawing.Point(1436, 204)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(140, 44)
-        Me.Button6.TabIndex = 306
-        Me.Button6.Text = "查詢"
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.btnQuery_cus.BackColor = System.Drawing.Color.Lime
+        Me.btnQuery_cus.Location = New System.Drawing.Point(1748, 210)
+        Me.btnQuery_cus.Name = "btnQuery_cus"
+        Me.btnQuery_cus.Size = New System.Drawing.Size(140, 44)
+        Me.btnQuery_cus.TabIndex = 306
+        Me.btnQuery_cus.Text = "查詢"
+        Me.btnQuery_cus.UseVisualStyleBackColor = False
         '
         'btnCancel_cus
         '
         Me.btnCancel_cus.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnCancel_cus.Location = New System.Drawing.Point(1451, 254)
+        Me.btnCancel_cus.Location = New System.Drawing.Point(492, 210)
         Me.btnCancel_cus.Name = "btnCancel_cus"
         Me.btnCancel_cus.Size = New System.Drawing.Size(140, 44)
         Me.btnCancel_cus.TabIndex = 305
         Me.btnCancel_cus.Text = "取  消"
         Me.btnCancel_cus.UseVisualStyleBackColor = False
         '
-        'Button8
+        'btnDelete_cus
         '
-        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button8.Location = New System.Drawing.Point(1305, 254)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(140, 44)
-        Me.Button8.TabIndex = 304
-        Me.Button8.Text = "刪  除"
-        Me.Button8.UseVisualStyleBackColor = False
+        Me.btnDelete_cus.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnDelete_cus.Location = New System.Drawing.Point(336, 210)
+        Me.btnDelete_cus.Name = "btnDelete_cus"
+        Me.btnDelete_cus.Size = New System.Drawing.Size(140, 44)
+        Me.btnDelete_cus.TabIndex = 304
+        Me.btnDelete_cus.Text = "刪  除"
+        Me.btnDelete_cus.UseVisualStyleBackColor = False
         '
-        'Button9
+        'btnModify_cus
         '
-        Me.Button9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button9.Location = New System.Drawing.Point(1159, 254)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(140, 44)
-        Me.Button9.TabIndex = 303
-        Me.Button9.Text = "修  改"
-        Me.Button9.UseVisualStyleBackColor = False
+        Me.btnModify_cus.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnModify_cus.Location = New System.Drawing.Point(180, 210)
+        Me.btnModify_cus.Name = "btnModify_cus"
+        Me.btnModify_cus.Size = New System.Drawing.Size(140, 44)
+        Me.btnModify_cus.TabIndex = 303
+        Me.btnModify_cus.Text = "修  改"
+        Me.btnModify_cus.UseVisualStyleBackColor = False
         '
-        'Button10
+        'btnInsert_cus
         '
-        Me.Button10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button10.Location = New System.Drawing.Point(1013, 254)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(140, 44)
-        Me.Button10.TabIndex = 302
-        Me.Button10.Tag = ""
-        Me.Button10.Text = "新  增"
-        Me.Button10.UseVisualStyleBackColor = False
+        Me.btnInsert_cus.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnInsert_cus.Location = New System.Drawing.Point(24, 210)
+        Me.btnInsert_cus.Name = "btnInsert_cus"
+        Me.btnInsert_cus.Size = New System.Drawing.Size(140, 44)
+        Me.btnInsert_cus.TabIndex = 302
+        Me.btnInsert_cus.Tag = ""
+        Me.btnInsert_cus.Text = "新  增"
+        Me.btnInsert_cus.UseVisualStyleBackColor = False
         '
-        'DataGridView4
+        'dgvCustomer
         '
-        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Location = New System.Drawing.Point(20, 316)
-        Me.DataGridView4.Name = "DataGridView4"
-        Me.DataGridView4.RowTemplate.Height = 24
-        Me.DataGridView4.Size = New System.Drawing.Size(1416, 462)
-        Me.DataGridView4.TabIndex = 301
+        Me.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCustomer.Location = New System.Drawing.Point(8, 268)
+        Me.dgvCustomer.Name = "dgvCustomer"
+        Me.dgvCustomer.RowTemplate.Height = 24
+        Me.dgvCustomer.Size = New System.Drawing.Size(1880, 697)
+        Me.dgvCustomer.TabIndex = 301
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Label48)
+        Me.TabPage3.Controls.Add(Me.Label47)
+        Me.TabPage3.Controls.Add(Me.Label46)
         Me.TabPage3.Controls.Add(Me.TextBox6)
         Me.TabPage3.Controls.Add(Me.Label42)
         Me.TabPage3.Controls.Add(Me.TextBox5)
@@ -786,7 +832,7 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.Label39)
         Me.TabPage3.Controls.Add(Me.Label7)
         Me.TabPage3.Controls.Add(Me.TextBox7)
-        Me.TabPage3.Controls.Add(Me.txtContact)
+        Me.TabPage3.Controls.Add(Me.txtContact_manu)
         Me.TabPage3.Controls.Add(Me.TextBox9)
         Me.TabPage3.Controls.Add(Me.TextBox10)
         Me.TabPage3.Controls.Add(Me.TextBox11)
@@ -822,12 +868,45 @@ Partial Class Form1
         Me.TabPage3.Text = "廠商管理"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.ForeColor = System.Drawing.Color.Red
+        Me.Label48.Location = New System.Drawing.Point(20, 119)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(20, 19)
+        Me.Label48.TabIndex = 311
+        Me.Label48.Text = "*"
+        Me.Label48.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.ForeColor = System.Drawing.Color.Red
+        Me.Label47.Location = New System.Drawing.Point(20, 71)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(20, 19)
+        Me.Label47.TabIndex = 310
+        Me.Label47.Text = "*"
+        Me.Label47.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.ForeColor = System.Drawing.Color.Red
+        Me.Label46.Location = New System.Drawing.Point(416, 23)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(20, 19)
+        Me.Label46.TabIndex = 309
+        Me.Label46.Text = "*"
+        Me.Label46.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(1000, 88)
+        Me.TextBox6.Location = New System.Drawing.Point(1288, 116)
         Me.TextBox6.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(150, 30)
+        Me.TextBox6.Size = New System.Drawing.Size(249, 30)
         Me.TextBox6.TabIndex = 307
         Me.TextBox6.Tag = "manu_account_name"
         '
@@ -835,18 +914,18 @@ Partial Class Form1
         '
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label42.Location = New System.Drawing.Point(940, 99)
+        Me.Label42.Location = New System.Drawing.Point(1184, 119)
         Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(51, 19)
+        Me.Label42.Size = New System.Drawing.Size(95, 19)
         Me.Label42.TabIndex = 308
-        Me.Label42.Text = "戶名"
+        Me.Label42.Text = "戶    名"
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(903, 128)
+        Me.TextBox5.Location = New System.Drawing.Point(1288, 164)
         Me.TextBox5.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(150, 30)
+        Me.TextBox5.Size = New System.Drawing.Size(250, 30)
         Me.TextBox5.TabIndex = 305
         Me.TextBox5.Tag = "manu_account"
         '
@@ -854,18 +933,18 @@ Partial Class Form1
         '
         Me.Label41.AutoSize = True
         Me.Label41.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label41.Location = New System.Drawing.Point(843, 139)
+        Me.Label41.Location = New System.Drawing.Point(1184, 167)
         Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(51, 19)
+        Me.Label41.Size = New System.Drawing.Size(95, 19)
         Me.Label41.TabIndex = 306
-        Me.Label41.Text = "帳號"
+        Me.Label41.Text = "帳    號"
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(667, 131)
+        Me.TextBox4.Location = New System.Drawing.Point(917, 164)
         Me.TextBox4.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(150, 30)
+        Me.TextBox4.Size = New System.Drawing.Size(250, 30)
         Me.TextBox4.TabIndex = 303
         Me.TextBox4.Tag = "manu_branches"
         '
@@ -873,18 +952,18 @@ Partial Class Form1
         '
         Me.Label40.AutoSize = True
         Me.Label40.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label40.Location = New System.Drawing.Point(563, 134)
+        Me.Label40.Location = New System.Drawing.Point(813, 167)
         Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(51, 19)
+        Me.Label40.Size = New System.Drawing.Size(95, 19)
         Me.Label40.TabIndex = 304
-        Me.Label40.Text = "分行"
+        Me.Label40.Text = "分    行"
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(374, 131)
+        Me.TextBox3.Location = New System.Drawing.Point(546, 164)
         Me.TextBox3.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(150, 30)
+        Me.TextBox3.Size = New System.Drawing.Size(250, 30)
         Me.TextBox3.TabIndex = 301
         Me.TextBox3.Tag = "manu_bank_code"
         '
@@ -892,7 +971,7 @@ Partial Class Form1
         '
         Me.Label39.AutoSize = True
         Me.Label39.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label39.Location = New System.Drawing.Point(270, 134)
+        Me.Label39.Location = New System.Drawing.Point(442, 167)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(93, 19)
         Me.Label39.TabIndex = 302
@@ -902,7 +981,7 @@ Partial Class Form1
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label7.Location = New System.Drawing.Point(19, 268)
+        Me.Label7.Location = New System.Drawing.Point(1184, 71)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(95, 19)
         Me.Label7.TabIndex = 300
@@ -910,110 +989,110 @@ Partial Class Form1
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(122, 265)
+        Me.TextBox7.Location = New System.Drawing.Point(1288, 68)
         Me.TextBox7.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(180, 30)
+        Me.TextBox7.Size = New System.Drawing.Size(249, 30)
         Me.TextBox7.TabIndex = 299
         Me.TextBox7.Tag = "manu_tax_id"
         '
-        'txtContact
+        'txtContact_manu
         '
-        Me.txtContact.Location = New System.Drawing.Point(390, 48)
-        Me.txtContact.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.txtContact.Name = "txtContact"
-        Me.txtContact.Size = New System.Drawing.Size(180, 30)
-        Me.txtContact.TabIndex = 297
-        Me.txtContact.Tag = "manu_contact_person"
+        Me.txtContact_manu.Location = New System.Drawing.Point(149, 68)
+        Me.txtContact_manu.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.txtContact_manu.Name = "txtContact_manu"
+        Me.txtContact_manu.Size = New System.Drawing.Size(250, 30)
+        Me.txtContact_manu.TabIndex = 297
+        Me.txtContact_manu.Tag = "manu_contact_person"
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(967, 51)
+        Me.TextBox9.Location = New System.Drawing.Point(546, 116)
         Me.TextBox9.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(180, 30)
+        Me.TextBox9.Size = New System.Drawing.Size(250, 30)
         Me.TextBox9.TabIndex = 295
         Me.TextBox9.Tag = "manu_phone2"
         '
         'TextBox10
         '
-        Me.TextBox10.Location = New System.Drawing.Point(667, 88)
+        Me.TextBox10.Location = New System.Drawing.Point(917, 116)
         Me.TextBox10.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(180, 30)
+        Me.TextBox10.Size = New System.Drawing.Size(250, 30)
         Me.TextBox10.TabIndex = 293
         Me.TextBox10.Tag = "manu_fax"
         '
         'TextBox11
         '
-        Me.TextBox11.Location = New System.Drawing.Point(106, 56)
+        Me.TextBox11.Location = New System.Drawing.Point(1288, 20)
         Me.TextBox11.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(180, 30)
+        Me.TextBox11.Size = New System.Drawing.Size(250, 30)
         Me.TextBox11.TabIndex = 291
         Me.TextBox11.Tag = "manu_principal"
         '
         'TextBox12
         '
-        Me.TextBox12.Location = New System.Drawing.Point(112, 218)
+        Me.TextBox12.Location = New System.Drawing.Point(149, 212)
         Me.TextBox12.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(735, 30)
+        Me.TextBox12.Size = New System.Drawing.Size(647, 30)
         Me.TextBox12.TabIndex = 289
         Me.TextBox12.Tag = "manu_memo"
         '
         'txtcus_address
         '
-        Me.txtcus_address.Location = New System.Drawing.Point(112, 178)
+        Me.txtcus_address.Location = New System.Drawing.Point(546, 68)
         Me.txtcus_address.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtcus_address.Name = "txtcus_address"
-        Me.txtcus_address.Size = New System.Drawing.Size(735, 30)
+        Me.txtcus_address.Size = New System.Drawing.Size(621, 30)
         Me.txtcus_address.TabIndex = 287
         Me.txtcus_address.Tag = "manu_address"
         '
         'txtphone1_menu
         '
-        Me.txtphone1_menu.Location = New System.Drawing.Point(683, 48)
+        Me.txtphone1_menu.Location = New System.Drawing.Point(149, 116)
         Me.txtphone1_menu.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtphone1_menu.Name = "txtphone1_menu"
-        Me.txtphone1_menu.Size = New System.Drawing.Size(180, 30)
+        Me.txtphone1_menu.Size = New System.Drawing.Size(250, 30)
         Me.txtphone1_menu.TabIndex = 285
         Me.txtphone1_menu.Tag = "manu_phone1"
         '
         'txtName_menu
         '
-        Me.txtName_menu.Location = New System.Drawing.Point(374, 8)
+        Me.txtName_menu.Location = New System.Drawing.Point(546, 20)
         Me.txtName_menu.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtName_menu.Name = "txtName_menu"
-        Me.txtName_menu.Size = New System.Drawing.Size(489, 30)
+        Me.txtName_menu.Size = New System.Drawing.Size(621, 30)
         Me.txtName_menu.TabIndex = 283
         Me.txtName_menu.Tag = "manu_name"
         '
         'txtAka_廠商
         '
-        Me.txtAka_廠商.Location = New System.Drawing.Point(112, 128)
+        Me.txtAka_廠商.Location = New System.Drawing.Point(149, 164)
         Me.txtAka_廠商.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtAka_廠商.Name = "txtAka_廠商"
-        Me.txtAka_廠商.Size = New System.Drawing.Size(150, 30)
+        Me.txtAka_廠商.Size = New System.Drawing.Size(250, 30)
         Me.txtAka_廠商.TabIndex = 281
         Me.txtAka_廠商.Tag = "manu_bank"
         '
         'txtNo_manu
         '
-        Me.txtNo_manu.Location = New System.Drawing.Point(103, 11)
+        Me.txtNo_manu.Location = New System.Drawing.Point(149, 20)
         Me.txtNo_manu.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtNo_manu.Name = "txtNo_manu"
         Me.txtNo_manu.ReadOnly = True
-        Me.txtNo_manu.Size = New System.Drawing.Size(150, 30)
+        Me.txtNo_manu.Size = New System.Drawing.Size(250, 30)
         Me.txtNo_manu.TabIndex = 279
         Me.txtNo_manu.Tag = "manu_id"
         '
         'txtQuery_manu
         '
-        Me.txtQuery_manu.Location = New System.Drawing.Point(1044, 262)
+        Me.txtQuery_manu.Location = New System.Drawing.Point(1491, 268)
         Me.txtQuery_manu.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtQuery_manu.Name = "txtQuery_manu"
-        Me.txtQuery_manu.Size = New System.Drawing.Size(168, 30)
+        Me.txtQuery_manu.Size = New System.Drawing.Size(250, 30)
         Me.txtQuery_manu.TabIndex = 277
         Me.txtQuery_manu.Tag = ""
         '
@@ -1021,7 +1100,7 @@ Partial Class Form1
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label8.Location = New System.Drawing.Point(287, 54)
+        Me.Label8.Location = New System.Drawing.Point(46, 71)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(94, 19)
         Me.Label8.TabIndex = 298
@@ -1031,17 +1110,17 @@ Partial Class Form1
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label9.Location = New System.Drawing.Point(896, 54)
+        Me.Label9.Location = New System.Drawing.Point(442, 119)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(62, 19)
+        Me.Label9.Size = New System.Drawing.Size(84, 19)
         Me.Label9.TabIndex = 296
-        Me.Label9.Text = "電話2"
+        Me.Label9.Text = "電 話 2"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label10.Location = New System.Drawing.Point(563, 91)
+        Me.Label10.Location = New System.Drawing.Point(813, 119)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(95, 19)
         Me.Label10.TabIndex = 294
@@ -1051,7 +1130,7 @@ Partial Class Form1
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label11.Location = New System.Drawing.Point(3, 65)
+        Me.Label11.Location = New System.Drawing.Point(1184, 23)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(94, 19)
         Me.Label11.TabIndex = 292
@@ -1061,7 +1140,7 @@ Partial Class Form1
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label12.Location = New System.Drawing.Point(8, 221)
+        Me.Label12.Location = New System.Drawing.Point(46, 215)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(95, 19)
         Me.Label12.TabIndex = 290
@@ -1071,7 +1150,7 @@ Partial Class Form1
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label13.Location = New System.Drawing.Point(8, 181)
+        Me.Label13.Location = New System.Drawing.Point(442, 71)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(95, 19)
         Me.Label13.TabIndex = 288
@@ -1081,37 +1160,37 @@ Partial Class Form1
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label14.Location = New System.Drawing.Point(579, 51)
+        Me.Label14.Location = New System.Drawing.Point(46, 119)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(106, 19)
+        Me.Label14.Size = New System.Drawing.Size(84, 19)
         Me.Label14.TabIndex = 286
-        Me.Label14.Text = "電    話1"
+        Me.Label14.Text = "電 話 1"
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label15.Location = New System.Drawing.Point(270, 11)
+        Me.Label15.Location = New System.Drawing.Point(442, 23)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(51, 19)
+        Me.Label15.Size = New System.Drawing.Size(95, 19)
         Me.Label15.TabIndex = 284
-        Me.Label15.Text = "名稱"
+        Me.Label15.Text = "名    稱"
         '
         'Label16
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label16.Location = New System.Drawing.Point(8, 131)
+        Me.Label16.Location = New System.Drawing.Point(46, 167)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(51, 19)
+        Me.Label16.Size = New System.Drawing.Size(95, 19)
         Me.Label16.TabIndex = 282
-        Me.Label16.Text = "銀行"
+        Me.Label16.Text = "銀    行"
         '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label17.Location = New System.Drawing.Point(-1, 14)
+        Me.Label17.Location = New System.Drawing.Point(46, 23)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(95, 19)
         Me.Label17.TabIndex = 280
@@ -1120,7 +1199,7 @@ Partial Class Form1
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(931, 265)
+        Me.Label18.Location = New System.Drawing.Point(1387, 271)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(95, 19)
         Me.Label18.TabIndex = 278
@@ -1129,7 +1208,7 @@ Partial Class Form1
         'btnQuery_manu
         '
         Me.btnQuery_manu.BackColor = System.Drawing.Color.Lime
-        Me.btnQuery_manu.Location = New System.Drawing.Point(1224, 260)
+        Me.btnQuery_manu.Location = New System.Drawing.Point(1750, 258)
         Me.btnQuery_manu.Name = "btnQuery_manu"
         Me.btnQuery_manu.Size = New System.Drawing.Size(140, 44)
         Me.btnQuery_manu.TabIndex = 276
@@ -1139,7 +1218,7 @@ Partial Class Form1
         'btnCancel_manu
         '
         Me.btnCancel_manu.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnCancel_manu.Location = New System.Drawing.Point(1239, 310)
+        Me.btnCancel_manu.Location = New System.Drawing.Point(518, 258)
         Me.btnCancel_manu.Name = "btnCancel_manu"
         Me.btnCancel_manu.Size = New System.Drawing.Size(140, 44)
         Me.btnCancel_manu.TabIndex = 275
@@ -1149,7 +1228,7 @@ Partial Class Form1
         'btnDelete_manu
         '
         Me.btnDelete_manu.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnDelete_manu.Location = New System.Drawing.Point(1093, 310)
+        Me.btnDelete_manu.Location = New System.Drawing.Point(362, 258)
         Me.btnDelete_manu.Name = "btnDelete_manu"
         Me.btnDelete_manu.Size = New System.Drawing.Size(140, 44)
         Me.btnDelete_manu.TabIndex = 274
@@ -1159,7 +1238,7 @@ Partial Class Form1
         'btnModify_manu
         '
         Me.btnModify_manu.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnModify_manu.Location = New System.Drawing.Point(947, 310)
+        Me.btnModify_manu.Location = New System.Drawing.Point(206, 258)
         Me.btnModify_manu.Name = "btnModify_manu"
         Me.btnModify_manu.Size = New System.Drawing.Size(140, 44)
         Me.btnModify_manu.TabIndex = 273
@@ -1169,7 +1248,7 @@ Partial Class Form1
         'btnInsert_manu
         '
         Me.btnInsert_manu.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnInsert_manu.Location = New System.Drawing.Point(801, 310)
+        Me.btnInsert_manu.Location = New System.Drawing.Point(50, 258)
         Me.btnInsert_manu.Name = "btnInsert_manu"
         Me.btnInsert_manu.Size = New System.Drawing.Size(140, 44)
         Me.btnInsert_manu.TabIndex = 272
@@ -1180,10 +1259,10 @@ Partial Class Form1
         'dgvManufacturer
         '
         Me.dgvManufacturer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvManufacturer.Location = New System.Drawing.Point(12, 379)
+        Me.dgvManufacturer.Location = New System.Drawing.Point(8, 316)
         Me.dgvManufacturer.Name = "dgvManufacturer"
         Me.dgvManufacturer.RowTemplate.Height = 24
-        Me.dgvManufacturer.Size = New System.Drawing.Size(1416, 462)
+        Me.dgvManufacturer.Size = New System.Drawing.Size(1880, 649)
         Me.dgvManufacturer.TabIndex = 271
         '
         'tpEmployee
@@ -1201,8 +1280,8 @@ Partial Class Form1
         Me.tpEmployee.Controls.Add(Me.txtAcc)
         Me.tpEmployee.Controls.Add(Me.Label31)
         Me.tpEmployee.Controls.Add(Me.Label92)
-        Me.tpEmployee.Controls.Add(Me.txtQuery_cus)
-        Me.tpEmployee.Controls.Add(Me.btnQuery_cus)
+        Me.tpEmployee.Controls.Add(Me.txtQuery_emp)
+        Me.tpEmployee.Controls.Add(Me.btnQuery_emp)
         Me.tpEmployee.Controls.Add(Me.btnCancel_emp)
         Me.tpEmployee.Controls.Add(Me.btnDelete_emp)
         Me.tpEmployee.Controls.Add(Me.btnModify_emp)
@@ -1312,7 +1391,7 @@ Partial Class Form1
         '
         'txtPsw
         '
-        Me.txtPsw.Location = New System.Drawing.Point(1255, 66)
+        Me.txtPsw.Location = New System.Drawing.Point(1337, 66)
         Me.txtPsw.Name = "txtPsw"
         Me.txtPsw.Size = New System.Drawing.Size(250, 30)
         Me.txtPsw.TabIndex = 272
@@ -1321,7 +1400,7 @@ Partial Class Form1
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(1236, 66)
+        Me.Label35.Location = New System.Drawing.Point(1236, 69)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(95, 19)
         Me.Label35.TabIndex = 271
@@ -1355,24 +1434,24 @@ Partial Class Form1
         Me.Label92.TabIndex = 268
         Me.Label92.Text = "搜    尋"
         '
-        'txtQuery_cus
+        'txtQuery_emp
         '
-        Me.txtQuery_cus.Location = New System.Drawing.Point(1489, 169)
-        Me.txtQuery_cus.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.txtQuery_cus.Name = "txtQuery_cus"
-        Me.txtQuery_cus.Size = New System.Drawing.Size(250, 30)
-        Me.txtQuery_cus.TabIndex = 267
-        Me.txtQuery_cus.Tag = ""
+        Me.txtQuery_emp.Location = New System.Drawing.Point(1489, 169)
+        Me.txtQuery_emp.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.txtQuery_emp.Name = "txtQuery_emp"
+        Me.txtQuery_emp.Size = New System.Drawing.Size(250, 30)
+        Me.txtQuery_emp.TabIndex = 267
+        Me.txtQuery_emp.Tag = ""
         '
-        'btnQuery_cus
+        'btnQuery_emp
         '
-        Me.btnQuery_cus.BackColor = System.Drawing.Color.Lime
-        Me.btnQuery_cus.Location = New System.Drawing.Point(1748, 159)
-        Me.btnQuery_cus.Name = "btnQuery_cus"
-        Me.btnQuery_cus.Size = New System.Drawing.Size(140, 44)
-        Me.btnQuery_cus.TabIndex = 266
-        Me.btnQuery_cus.Text = "查詢"
-        Me.btnQuery_cus.UseVisualStyleBackColor = False
+        Me.btnQuery_emp.BackColor = System.Drawing.Color.Lime
+        Me.btnQuery_emp.Location = New System.Drawing.Point(1748, 159)
+        Me.btnQuery_emp.Name = "btnQuery_emp"
+        Me.btnQuery_emp.Size = New System.Drawing.Size(140, 44)
+        Me.btnQuery_emp.TabIndex = 266
+        Me.btnQuery_emp.Text = "查詢"
+        Me.btnQuery_emp.UseVisualStyleBackColor = False
         '
         'btnCancel_emp
         '
@@ -1954,7 +2033,7 @@ Partial Class Form1
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCustomer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         CType(Me.dgvManufacturer, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1998,16 +2077,16 @@ Partial Class Form1
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents Label19 As Label
     Friend WithEvents TextBox14 As TextBox
-    Friend WithEvents TextBox15 As TextBox
+    Friend WithEvents txtContact_cus As TextBox
     Friend WithEvents TextBox16 As TextBox
     Friend WithEvents TextBox17 As TextBox
     Friend WithEvents TextBox18 As TextBox
     Friend WithEvents TextBox19 As TextBox
     Friend WithEvents TextBox20 As TextBox
-    Friend WithEvents TextBox21 As TextBox
-    Friend WithEvents TextBox22 As TextBox
-    Friend WithEvents TextBox24 As TextBox
-    Friend WithEvents TextBox25 As TextBox
+    Friend WithEvents txtPhone1_cus As TextBox
+    Friend WithEvents txtName_cus As TextBox
+    Friend WithEvents txtID_cus As TextBox
+    Friend WithEvents txtQuery_cus As TextBox
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents Label22 As Label
@@ -2018,16 +2097,16 @@ Partial Class Form1
     Friend WithEvents Label27 As Label
     Friend WithEvents Label29 As Label
     Friend WithEvents Label30 As Label
-    Friend WithEvents Button6 As Button
+    Friend WithEvents btnQuery_cus As Button
     Friend WithEvents btnCancel_cus As Button
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button9 As Button
-    Friend WithEvents Button10 As Button
-    Friend WithEvents DataGridView4 As DataGridView
+    Friend WithEvents btnDelete_cus As Button
+    Friend WithEvents btnModify_cus As Button
+    Friend WithEvents btnInsert_cus As Button
+    Friend WithEvents dgvCustomer As DataGridView
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents Label7 As Label
     Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents txtContact As TextBox
+    Friend WithEvents txtContact_manu As TextBox
     Friend WithEvents TextBox9 As TextBox
     Friend WithEvents TextBox10 As TextBox
     Friend WithEvents TextBox11 As TextBox
@@ -2061,8 +2140,8 @@ Partial Class Form1
     Friend WithEvents txtAcc As TextBox
     Friend WithEvents Label31 As Label
     Friend WithEvents Label92 As Label
-    Friend WithEvents txtQuery_cus As TextBox
-    Friend WithEvents btnQuery_cus As Button
+    Friend WithEvents txtQuery_emp As TextBox
+    Friend WithEvents btnQuery_emp As Button
     Friend WithEvents btnCancel_emp As Button
     Friend WithEvents btnDelete_emp As Button
     Friend WithEvents btnModify_emp As Button
@@ -2134,4 +2213,10 @@ Partial Class Form1
     Friend WithEvents Label43 As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents dtpBirthday As DateTimePicker
+    Friend WithEvents Label51 As Label
+    Friend WithEvents Label50 As Label
+    Friend WithEvents Label49 As Label
+    Friend WithEvents Label48 As Label
+    Friend WithEvents Label47 As Label
+    Friend WithEvents Label46 As Label
 End Class

@@ -141,4 +141,24 @@ Module modMySQL
 
         Return tableNames
     End Function
+
+    ''' <summary>
+    ''' 檢查是否重複新增
+    ''' </summary>
+    ''' <param name="selectFrom">SQL前半段</param>
+    ''' <param name="dic">條件,key:欄位 value:值</param>
+    ''' <param name="dgv">欲顯示的DataGridView</param>
+    ''' <returns></returns>
+    Public Function CheckDuplication(selectFrom As String, dic As Dictionary(Of String, String), Optional dgv As DataGridView = Nothing) As Boolean
+        '修正參數List>Dictionary,如果遇到DateTimePicker就會遇到可能取的值不是想要的
+        Dim lst As List(Of String) = dic.Select(Function(kvp) $"{kvp.Key} = '{kvp.Value}'").ToList
+        Dim sql = selectFrom + $" WHERE {String.Join(" AND ", lst)}"
+        Dim dt = SelectTable(sql)
+        If dt.Rows.Count > 0 Then
+            MsgBox("重複資料")
+            If dgv IsNot Nothing Then dgv.DataSource = dt
+            Return False
+        End If
+        Return True
+    End Function
 End Module

@@ -110,24 +110,6 @@
     End Function
 
     ''' <summary>
-    ''' 檢查是否重複新增
-    ''' </summary>
-    ''' <param name="selectFrom">SQL前半段</param>
-    ''' <param name="list">條件,輸入控制項會自動取得Tag(欄位名稱),Text(值)</param>
-    ''' <param name="dgv"></param>
-    ''' <returns></returns>
-    Public Function CheckDuplication(selectFrom As String, list As List(Of Object), dgv As DataGridView) As Boolean
-        Dim sql = selectFrom + $" WHERE {String.Join(" AND ", list.Select(Function(x) $"{x.tag} = '{x.text}'"))}"
-        If SelectTable(sql).Rows.Count > 0 Then
-            MsgBox("重複資料")
-            '列出重複的資料
-            GetDataToDgv(sql, dgv)
-            Return False
-        End If
-        Return True
-    End Function
-
-    ''' <summary>
     ''' 將資料放到DataGridView
     ''' </summary>
     ''' <param name="sql"></param>
