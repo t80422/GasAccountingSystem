@@ -1,4 +1,7 @@
-﻿Module modUtility
+﻿Imports System.IO
+Imports System.Text
+
+Module modUtility
     ''' <summary>
     ''' 清空指定控制項內其他控制項
     ''' </summary>
@@ -145,11 +148,10 @@
                 .AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(224, 224, 224)
                 .EnableHeadersVisualStyles = False
                 .ColumnHeadersDefaultCellStyle.BackColor = Color.MediumTurquoise
-                .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
                 .AllowUserToAddRows = False
                 .AllowUserToDeleteRows = False
                 .ReadOnly = True
-                .Anchor = AnchorStyles.Bottom And AnchorStyles.Left
+                .AllowUserToResizeColumns = True
             End With
         Next
     End Sub
@@ -189,4 +191,50 @@
         End If
         Return True
     End Function
+
+    Sub SaveDataGridWidth(sender As Object, e As EventArgs)
+        Dim dgv As DataGridView = sender
+        With dgv
+            Dim lst As New List(Of String)
+            For Each col As DataGridViewColumn In .Columns
+                lst.Add(col.Width)
+            Next
+
+            Dim filePath = Path.Combine(Application.StartupPath, "DGVWidth.set")
+            Dim lines As List(Of String) = If(File.Exists(filePath), File.ReadAllLines(filePath).ToList, New List(Of String))
+            Dim bReplace As Boolean = False
+            For i As Integer = 0 To lines.Count - 1
+                Dim parts = lines(i).Split(":")
+                If parts(0) = .Name Then
+                    parts(1) = String.Join(",", lst)
+                    lines(i) = String.Join(":", parts)
+                    bReplace = True
+                    Exit For
+                End If
+            Next
+
+            If Not bReplace Then
+                lines.Add($"{ .Name}:{String.Join(",", lst)}")
+            End If
+
+            File.WriteAllLines(filePath, lines)
+        End With
+    End Sub
+
+    ''' <summary>
+    ''' 讀取並設定欄寬
+    ''' </summary>
+    ''' <param name="dgvs"></param>
+    Sub ReadDataGridWidth(dgvs As List(Of DataGridView))
+        Dim lines = File.ReadAllLines(Application.StartupPath + "\DGVWidth.set").ToList
+        For Each dgv In dgvs
+            Dim line = lines.FirstOrDefault(Function(l) l.StartsWith(dgv.Name))
+            If line IsNot Nothing Then
+                Dim widths = line.Split(":")(1).Split(",")
+                For i As Integer = 0 To widths.Length - 1
+                    dgv.Columns(i).Width = Integer.Parse(widths(i))
+                Next
+            End If
+        Next
+    End Sub
 End Module

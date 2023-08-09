@@ -157,7 +157,6 @@ Partial Class Form1
         Me.dgvEmployee = New System.Windows.Forms.DataGridView()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tpPermissions = New System.Windows.Forms.TabPage()
-        Me.flpPermissions = New System.Windows.Forms.FlowLayoutPanel()
         Me.CheckBox22 = New System.Windows.Forms.CheckBox()
         Me.CheckBox21 = New System.Windows.Forms.CheckBox()
         Me.CheckBox20 = New System.Windows.Forms.CheckBox()
@@ -193,6 +192,9 @@ Partial Class Form1
         Me.dgvPermissions = New System.Windows.Forms.DataGridView()
         Me.btnModify_perm = New System.Windows.Forms.Button()
         Me.tpLogOut = New System.Windows.Forms.TabPage()
+        Me.txtCode_manu = New System.Windows.Forms.TextBox()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.Label53 = New System.Windows.Forms.Label()
         Me.TabPage21.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
@@ -212,7 +214,7 @@ Partial Class Form1
         Me.TabPage21.Location = New System.Drawing.Point(4, 54)
         Me.TabPage21.Name = "TabPage21"
         Me.TabPage21.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage21.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage21.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage21.TabIndex = 21
         Me.TabPage21.Text = "報表管理"
         Me.TabPage21.UseVisualStyleBackColor = True
@@ -230,7 +232,7 @@ Partial Class Form1
         Me.TabControl2.Location = New System.Drawing.Point(3, 3)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(1890, 967)
+        Me.TabControl2.Size = New System.Drawing.Size(1890, 957)
         Me.TabControl2.TabIndex = 0
         '
         'TabPage22
@@ -238,7 +240,7 @@ Partial Class Form1
         Me.TabPage22.Location = New System.Drawing.Point(4, 29)
         Me.TabPage22.Name = "TabPage22"
         Me.TabPage22.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage22.Size = New System.Drawing.Size(1882, 934)
+        Me.TabPage22.Size = New System.Drawing.Size(1882, 924)
         Me.TabPage22.TabIndex = 0
         Me.TabPage22.Text = "能源局報表"
         Me.TabPage22.UseVisualStyleBackColor = True
@@ -308,7 +310,7 @@ Partial Class Form1
         Me.TabPage20.Location = New System.Drawing.Point(4, 54)
         Me.TabPage20.Name = "TabPage20"
         Me.TabPage20.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage20.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage20.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage20.TabIndex = 20
         Me.TabPage20.Text = "發票金額管理"
         Me.TabPage20.UseVisualStyleBackColor = True
@@ -318,7 +320,7 @@ Partial Class Form1
         Me.TabPage19.Location = New System.Drawing.Point(4, 54)
         Me.TabPage19.Name = "TabPage19"
         Me.TabPage19.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage19.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage19.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage19.TabIndex = 19
         Me.TabPage19.Text = "進項管理"
         Me.TabPage19.UseVisualStyleBackColor = True
@@ -328,7 +330,7 @@ Partial Class Form1
         Me.TabPage18.Location = New System.Drawing.Point(4, 54)
         Me.TabPage18.Name = "TabPage18"
         Me.TabPage18.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage18.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage18.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage18.TabIndex = 18
         Me.TabPage18.Text = "銷項管理"
         Me.TabPage18.UseVisualStyleBackColor = True
@@ -338,7 +340,7 @@ Partial Class Form1
         Me.TabPage17.Location = New System.Drawing.Point(4, 54)
         Me.TabPage17.Name = "TabPage17"
         Me.TabPage17.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage17.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage17.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage17.TabIndex = 17
         Me.TabPage17.Text = "支票管理"
         Me.TabPage17.UseVisualStyleBackColor = True
@@ -348,7 +350,7 @@ Partial Class Form1
         Me.TabPage16.Location = New System.Drawing.Point(4, 54)
         Me.TabPage16.Name = "TabPage16"
         Me.TabPage16.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage16.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage16.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage16.TabIndex = 16
         Me.TabPage16.Text = "現金帳管理"
         Me.TabPage16.UseVisualStyleBackColor = True
@@ -358,7 +360,7 @@ Partial Class Form1
         Me.TabPage15.Location = New System.Drawing.Point(4, 54)
         Me.TabPage15.Name = "TabPage15"
         Me.TabPage15.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage15.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage15.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage15.TabIndex = 15
         Me.TabPage15.Text = "銀行帳戶管理"
         Me.TabPage15.UseVisualStyleBackColor = True
@@ -368,7 +370,7 @@ Partial Class Form1
         Me.TabPage14.Location = New System.Drawing.Point(4, 54)
         Me.TabPage14.Name = "TabPage14"
         Me.TabPage14.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage14.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage14.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage14.TabIndex = 14
         Me.TabPage14.Text = "公司管理"
         Me.TabPage14.UseVisualStyleBackColor = True
@@ -378,7 +380,7 @@ Partial Class Form1
         Me.TabPage13.Location = New System.Drawing.Point(4, 54)
         Me.TabPage13.Name = "TabPage13"
         Me.TabPage13.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage13.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage13.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage13.TabIndex = 13
         Me.TabPage13.Text = "檢驗桶管理"
         Me.TabPage13.UseVisualStyleBackColor = True
@@ -388,7 +390,7 @@ Partial Class Form1
         Me.TabPage12.Location = New System.Drawing.Point(4, 54)
         Me.TabPage12.Name = "TabPage12"
         Me.TabPage12.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage12.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage12.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage12.TabIndex = 12
         Me.TabPage12.Text = "大氣、運費管理"
         Me.TabPage12.UseVisualStyleBackColor = True
@@ -398,7 +400,7 @@ Partial Class Form1
         Me.TabPage11.Location = New System.Drawing.Point(4, 54)
         Me.TabPage11.Name = "TabPage11"
         Me.TabPage11.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage11.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage11.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage11.TabIndex = 11
         Me.TabPage11.Text = "會計憑證管理"
         Me.TabPage11.UseVisualStyleBackColor = True
@@ -408,7 +410,7 @@ Partial Class Form1
         Me.TabPage10.Location = New System.Drawing.Point(4, 54)
         Me.TabPage10.Name = "TabPage10"
         Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage10.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage10.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage10.TabIndex = 10
         Me.TabPage10.Text = "應付帳款管理"
         Me.TabPage10.UseVisualStyleBackColor = True
@@ -418,7 +420,7 @@ Partial Class Form1
         Me.TabPage9.Location = New System.Drawing.Point(4, 54)
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage9.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage9.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage9.TabIndex = 9
         Me.TabPage9.Text = "應收帳款管理"
         Me.TabPage9.UseVisualStyleBackColor = True
@@ -428,7 +430,7 @@ Partial Class Form1
         Me.TabPage8.Location = New System.Drawing.Point(4, 54)
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage8.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage8.TabIndex = 8
         Me.TabPage8.Text = "現金帳、借貸管理"
         Me.TabPage8.UseVisualStyleBackColor = True
@@ -438,7 +440,7 @@ Partial Class Form1
         Me.TabPage7.Location = New System.Drawing.Point(4, 54)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage7.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage7.TabIndex = 7
         Me.TabPage7.Text = "提氣管理"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -448,7 +450,7 @@ Partial Class Form1
         Me.TabPage6.Location = New System.Drawing.Point(4, 54)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage6.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage6.TabIndex = 6
         Me.TabPage6.Text = "收款記錄管理"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -458,7 +460,7 @@ Partial Class Form1
         Me.客戶保險管理.Location = New System.Drawing.Point(4, 54)
         Me.客戶保險管理.Name = "客戶保險管理"
         Me.客戶保險管理.Padding = New System.Windows.Forms.Padding(3)
-        Me.客戶保險管理.Size = New System.Drawing.Size(1896, 973)
+        Me.客戶保險管理.Size = New System.Drawing.Size(1896, 963)
         Me.客戶保險管理.TabIndex = 5
         Me.客戶保險管理.Text = "客戶保險管理"
         Me.客戶保險管理.UseVisualStyleBackColor = True
@@ -468,7 +470,7 @@ Partial Class Form1
         Me.TabPage5.Location = New System.Drawing.Point(4, 54)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage5.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "客戶月份退氣清冊"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -509,7 +511,7 @@ Partial Class Form1
         Me.TabPage4.Location = New System.Drawing.Point(4, 54)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage4.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "客戶管理"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -810,15 +812,19 @@ Partial Class Form1
         '
         'dgvCustomer
         '
+        Me.dgvCustomer.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCustomer.Location = New System.Drawing.Point(8, 268)
+        Me.dgvCustomer.Location = New System.Drawing.Point(8, 275)
         Me.dgvCustomer.Name = "dgvCustomer"
         Me.dgvCustomer.RowTemplate.Height = 24
-        Me.dgvCustomer.Size = New System.Drawing.Size(1880, 697)
+        Me.dgvCustomer.Size = New System.Drawing.Size(1880, 680)
         Me.dgvCustomer.TabIndex = 301
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Label53)
+        Me.TabPage3.Controls.Add(Me.txtCode_manu)
+        Me.TabPage3.Controls.Add(Me.Label52)
         Me.TabPage3.Controls.Add(Me.Label48)
         Me.TabPage3.Controls.Add(Me.Label47)
         Me.TabPage3.Controls.Add(Me.Label46)
@@ -863,7 +869,7 @@ Partial Class Form1
         Me.TabPage3.Location = New System.Drawing.Point(4, 54)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1896, 973)
+        Me.TabPage3.Size = New System.Drawing.Size(1896, 963)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "廠商管理"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -883,7 +889,7 @@ Partial Class Form1
         '
         Me.Label47.AutoSize = True
         Me.Label47.ForeColor = System.Drawing.Color.Red
-        Me.Label47.Location = New System.Drawing.Point(20, 71)
+        Me.Label47.Location = New System.Drawing.Point(416, 71)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(20, 19)
         Me.Label47.TabIndex = 310
@@ -894,7 +900,7 @@ Partial Class Form1
         '
         Me.Label46.AutoSize = True
         Me.Label46.ForeColor = System.Drawing.Color.Red
-        Me.Label46.Location = New System.Drawing.Point(416, 23)
+        Me.Label46.Location = New System.Drawing.Point(811, 23)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(20, 19)
         Me.Label46.TabIndex = 309
@@ -903,7 +909,7 @@ Partial Class Form1
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(1288, 116)
+        Me.TextBox6.Location = New System.Drawing.Point(149, 210)
         Me.TextBox6.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(249, 30)
@@ -914,7 +920,7 @@ Partial Class Form1
         '
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label42.Location = New System.Drawing.Point(1184, 119)
+        Me.Label42.Location = New System.Drawing.Point(45, 213)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(95, 19)
         Me.Label42.TabIndex = 308
@@ -922,7 +928,7 @@ Partial Class Form1
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(1288, 164)
+        Me.TextBox5.Location = New System.Drawing.Point(1312, 164)
         Me.TextBox5.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(250, 30)
@@ -933,7 +939,7 @@ Partial Class Form1
         '
         Me.Label41.AutoSize = True
         Me.Label41.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label41.Location = New System.Drawing.Point(1184, 167)
+        Me.Label41.Location = New System.Drawing.Point(1208, 167)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(95, 19)
         Me.Label41.TabIndex = 306
@@ -941,7 +947,7 @@ Partial Class Form1
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(917, 164)
+        Me.TextBox4.Location = New System.Drawing.Point(941, 164)
         Me.TextBox4.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(250, 30)
@@ -952,7 +958,7 @@ Partial Class Form1
         '
         Me.Label40.AutoSize = True
         Me.Label40.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label40.Location = New System.Drawing.Point(813, 167)
+        Me.Label40.Location = New System.Drawing.Point(837, 167)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(95, 19)
         Me.Label40.TabIndex = 304
@@ -981,7 +987,7 @@ Partial Class Form1
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label7.Location = New System.Drawing.Point(1184, 71)
+        Me.Label7.Location = New System.Drawing.Point(1209, 119)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(95, 19)
         Me.Label7.TabIndex = 300
@@ -989,7 +995,7 @@ Partial Class Form1
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(1288, 68)
+        Me.TextBox7.Location = New System.Drawing.Point(1313, 116)
         Me.TextBox7.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(249, 30)
@@ -998,7 +1004,7 @@ Partial Class Form1
         '
         'txtContact_manu
         '
-        Me.txtContact_manu.Location = New System.Drawing.Point(149, 68)
+        Me.txtContact_manu.Location = New System.Drawing.Point(545, 68)
         Me.txtContact_manu.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtContact_manu.Name = "txtContact_manu"
         Me.txtContact_manu.Size = New System.Drawing.Size(250, 30)
@@ -1016,7 +1022,7 @@ Partial Class Form1
         '
         'TextBox10
         '
-        Me.TextBox10.Location = New System.Drawing.Point(917, 116)
+        Me.TextBox10.Location = New System.Drawing.Point(941, 116)
         Me.TextBox10.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(250, 30)
@@ -1025,7 +1031,7 @@ Partial Class Form1
         '
         'TextBox11
         '
-        Me.TextBox11.Location = New System.Drawing.Point(1288, 20)
+        Me.TextBox11.Location = New System.Drawing.Point(149, 68)
         Me.TextBox11.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(250, 30)
@@ -1034,7 +1040,7 @@ Partial Class Form1
         '
         'TextBox12
         '
-        Me.TextBox12.Location = New System.Drawing.Point(149, 212)
+        Me.TextBox12.Location = New System.Drawing.Point(545, 210)
         Me.TextBox12.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.Size = New System.Drawing.Size(647, 30)
@@ -1043,7 +1049,7 @@ Partial Class Form1
         '
         'txtcus_address
         '
-        Me.txtcus_address.Location = New System.Drawing.Point(546, 68)
+        Me.txtcus_address.Location = New System.Drawing.Point(941, 68)
         Me.txtcus_address.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtcus_address.Name = "txtcus_address"
         Me.txtcus_address.Size = New System.Drawing.Size(621, 30)
@@ -1061,7 +1067,7 @@ Partial Class Form1
         '
         'txtName_menu
         '
-        Me.txtName_menu.Location = New System.Drawing.Point(546, 20)
+        Me.txtName_menu.Location = New System.Drawing.Point(941, 20)
         Me.txtName_menu.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtName_menu.Name = "txtName_menu"
         Me.txtName_menu.Size = New System.Drawing.Size(621, 30)
@@ -1100,7 +1106,7 @@ Partial Class Form1
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label8.Location = New System.Drawing.Point(46, 71)
+        Me.Label8.Location = New System.Drawing.Point(442, 71)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(94, 19)
         Me.Label8.TabIndex = 298
@@ -1120,7 +1126,7 @@ Partial Class Form1
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label10.Location = New System.Drawing.Point(813, 119)
+        Me.Label10.Location = New System.Drawing.Point(837, 119)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(95, 19)
         Me.Label10.TabIndex = 294
@@ -1130,7 +1136,7 @@ Partial Class Form1
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label11.Location = New System.Drawing.Point(1184, 23)
+        Me.Label11.Location = New System.Drawing.Point(45, 71)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(94, 19)
         Me.Label11.TabIndex = 292
@@ -1140,7 +1146,7 @@ Partial Class Form1
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label12.Location = New System.Drawing.Point(46, 215)
+        Me.Label12.Location = New System.Drawing.Point(442, 213)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(95, 19)
         Me.Label12.TabIndex = 290
@@ -1150,7 +1156,7 @@ Partial Class Form1
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label13.Location = New System.Drawing.Point(442, 71)
+        Me.Label13.Location = New System.Drawing.Point(837, 71)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(95, 19)
         Me.Label13.TabIndex = 288
@@ -1170,7 +1176,7 @@ Partial Class Form1
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label15.Location = New System.Drawing.Point(442, 23)
+        Me.Label15.Location = New System.Drawing.Point(837, 23)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(95, 19)
         Me.Label15.TabIndex = 284
@@ -1218,7 +1224,7 @@ Partial Class Form1
         'btnCancel_manu
         '
         Me.btnCancel_manu.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnCancel_manu.Location = New System.Drawing.Point(518, 258)
+        Me.btnCancel_manu.Location = New System.Drawing.Point(488, 258)
         Me.btnCancel_manu.Name = "btnCancel_manu"
         Me.btnCancel_manu.Size = New System.Drawing.Size(140, 44)
         Me.btnCancel_manu.TabIndex = 275
@@ -1228,7 +1234,7 @@ Partial Class Form1
         'btnDelete_manu
         '
         Me.btnDelete_manu.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnDelete_manu.Location = New System.Drawing.Point(362, 258)
+        Me.btnDelete_manu.Location = New System.Drawing.Point(332, 258)
         Me.btnDelete_manu.Name = "btnDelete_manu"
         Me.btnDelete_manu.Size = New System.Drawing.Size(140, 44)
         Me.btnDelete_manu.TabIndex = 274
@@ -1238,7 +1244,7 @@ Partial Class Form1
         'btnModify_manu
         '
         Me.btnModify_manu.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnModify_manu.Location = New System.Drawing.Point(206, 258)
+        Me.btnModify_manu.Location = New System.Drawing.Point(176, 258)
         Me.btnModify_manu.Name = "btnModify_manu"
         Me.btnModify_manu.Size = New System.Drawing.Size(140, 44)
         Me.btnModify_manu.TabIndex = 273
@@ -1248,7 +1254,7 @@ Partial Class Form1
         'btnInsert_manu
         '
         Me.btnInsert_manu.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnInsert_manu.Location = New System.Drawing.Point(50, 258)
+        Me.btnInsert_manu.Location = New System.Drawing.Point(20, 258)
         Me.btnInsert_manu.Name = "btnInsert_manu"
         Me.btnInsert_manu.Size = New System.Drawing.Size(140, 44)
         Me.btnInsert_manu.TabIndex = 272
@@ -1258,11 +1264,12 @@ Partial Class Form1
         '
         'dgvManufacturer
         '
+        Me.dgvManufacturer.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.dgvManufacturer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvManufacturer.Location = New System.Drawing.Point(8, 316)
+        Me.dgvManufacturer.Location = New System.Drawing.Point(8, 325)
         Me.dgvManufacturer.Name = "dgvManufacturer"
         Me.dgvManufacturer.RowTemplate.Height = 24
-        Me.dgvManufacturer.Size = New System.Drawing.Size(1880, 649)
+        Me.dgvManufacturer.Size = New System.Drawing.Size(1880, 630)
         Me.dgvManufacturer.TabIndex = 271
         '
         'tpEmployee
@@ -1302,7 +1309,7 @@ Partial Class Form1
         Me.tpEmployee.Location = New System.Drawing.Point(4, 54)
         Me.tpEmployee.Name = "tpEmployee"
         Me.tpEmployee.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpEmployee.Size = New System.Drawing.Size(1896, 973)
+        Me.tpEmployee.Size = New System.Drawing.Size(1896, 963)
         Me.tpEmployee.TabIndex = 0
         Me.tpEmployee.Text = "員工管理"
         Me.tpEmployee.UseVisualStyleBackColor = True
@@ -1604,11 +1611,12 @@ Partial Class Form1
         '
         'dgvEmployee
         '
+        Me.dgvEmployee.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEmployee.Location = New System.Drawing.Point(6, 217)
+        Me.dgvEmployee.Location = New System.Drawing.Point(8, 225)
         Me.dgvEmployee.Name = "dgvEmployee"
         Me.dgvEmployee.RowTemplate.Height = 24
-        Me.dgvEmployee.Size = New System.Drawing.Size(1882, 748)
+        Me.dgvEmployee.Size = New System.Drawing.Size(1882, 730)
         Me.dgvEmployee.TabIndex = 0
         '
         'TabControl1
@@ -1642,12 +1650,11 @@ Partial Class Form1
         Me.TabControl1.Multiline = True
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1904, 1031)
+        Me.TabControl1.Size = New System.Drawing.Size(1904, 1021)
         Me.TabControl1.TabIndex = 0
         '
         'tpPermissions
         '
-        Me.tpPermissions.Controls.Add(Me.flpPermissions)
         Me.tpPermissions.Controls.Add(Me.CheckBox22)
         Me.tpPermissions.Controls.Add(Me.CheckBox21)
         Me.tpPermissions.Controls.Add(Me.CheckBox20)
@@ -1685,21 +1692,14 @@ Partial Class Form1
         Me.tpPermissions.Location = New System.Drawing.Point(4, 54)
         Me.tpPermissions.Name = "tpPermissions"
         Me.tpPermissions.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpPermissions.Size = New System.Drawing.Size(1896, 973)
+        Me.tpPermissions.Size = New System.Drawing.Size(1896, 963)
         Me.tpPermissions.TabIndex = 1
         Me.tpPermissions.Text = "權限管理"
         Me.tpPermissions.UseVisualStyleBackColor = True
         '
-        'flpPermissions
-        '
-        Me.flpPermissions.Location = New System.Drawing.Point(8, 153)
-        Me.flpPermissions.Name = "flpPermissions"
-        Me.flpPermissions.Size = New System.Drawing.Size(1871, 108)
-        Me.flpPermissions.TabIndex = 306
-        '
         'CheckBox22
         '
-        Me.CheckBox22.Location = New System.Drawing.Point(632, 124)
+        Me.CheckBox22.Location = New System.Drawing.Point(632, 138)
         Me.CheckBox22.Name = "CheckBox22"
         Me.CheckBox22.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox22.TabIndex = 305
@@ -1708,7 +1708,7 @@ Partial Class Form1
         '
         'CheckBox21
         '
-        Me.CheckBox21.Location = New System.Drawing.Point(424, 124)
+        Me.CheckBox21.Location = New System.Drawing.Point(424, 138)
         Me.CheckBox21.Name = "CheckBox21"
         Me.CheckBox21.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox21.TabIndex = 304
@@ -1717,7 +1717,7 @@ Partial Class Form1
         '
         'CheckBox20
         '
-        Me.CheckBox20.Location = New System.Drawing.Point(216, 124)
+        Me.CheckBox20.Location = New System.Drawing.Point(216, 138)
         Me.CheckBox20.Name = "CheckBox20"
         Me.CheckBox20.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox20.TabIndex = 303
@@ -1726,7 +1726,7 @@ Partial Class Form1
         '
         'CheckBox19
         '
-        Me.CheckBox19.Location = New System.Drawing.Point(8, 124)
+        Me.CheckBox19.Location = New System.Drawing.Point(8, 138)
         Me.CheckBox19.Name = "CheckBox19"
         Me.CheckBox19.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox19.TabIndex = 302
@@ -1735,7 +1735,7 @@ Partial Class Form1
         '
         'CheckBox18
         '
-        Me.CheckBox18.Location = New System.Drawing.Point(1464, 95)
+        Me.CheckBox18.Location = New System.Drawing.Point(1464, 101)
         Me.CheckBox18.Name = "CheckBox18"
         Me.CheckBox18.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox18.TabIndex = 301
@@ -1744,7 +1744,7 @@ Partial Class Form1
         '
         'CheckBox17
         '
-        Me.CheckBox17.Location = New System.Drawing.Point(1672, 95)
+        Me.CheckBox17.Location = New System.Drawing.Point(1672, 101)
         Me.CheckBox17.Name = "CheckBox17"
         Me.CheckBox17.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox17.TabIndex = 300
@@ -1753,7 +1753,7 @@ Partial Class Form1
         '
         'CheckBox16
         '
-        Me.CheckBox16.Location = New System.Drawing.Point(1256, 95)
+        Me.CheckBox16.Location = New System.Drawing.Point(1256, 101)
         Me.CheckBox16.Name = "CheckBox16"
         Me.CheckBox16.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox16.TabIndex = 299
@@ -1762,7 +1762,7 @@ Partial Class Form1
         '
         'CheckBox15
         '
-        Me.CheckBox15.Location = New System.Drawing.Point(1048, 95)
+        Me.CheckBox15.Location = New System.Drawing.Point(1048, 101)
         Me.CheckBox15.Name = "CheckBox15"
         Me.CheckBox15.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox15.TabIndex = 298
@@ -1771,7 +1771,7 @@ Partial Class Form1
         '
         'CheckBox14
         '
-        Me.CheckBox14.Location = New System.Drawing.Point(840, 95)
+        Me.CheckBox14.Location = New System.Drawing.Point(840, 101)
         Me.CheckBox14.Name = "CheckBox14"
         Me.CheckBox14.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox14.TabIndex = 297
@@ -1780,7 +1780,7 @@ Partial Class Form1
         '
         'CheckBox13
         '
-        Me.CheckBox13.Location = New System.Drawing.Point(632, 95)
+        Me.CheckBox13.Location = New System.Drawing.Point(632, 101)
         Me.CheckBox13.Name = "CheckBox13"
         Me.CheckBox13.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox13.TabIndex = 296
@@ -1789,7 +1789,7 @@ Partial Class Form1
         '
         'CheckBox12
         '
-        Me.CheckBox12.Location = New System.Drawing.Point(424, 95)
+        Me.CheckBox12.Location = New System.Drawing.Point(424, 101)
         Me.CheckBox12.Name = "CheckBox12"
         Me.CheckBox12.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox12.TabIndex = 295
@@ -1798,7 +1798,7 @@ Partial Class Form1
         '
         'CheckBox11
         '
-        Me.CheckBox11.Location = New System.Drawing.Point(8, 95)
+        Me.CheckBox11.Location = New System.Drawing.Point(8, 101)
         Me.CheckBox11.Name = "CheckBox11"
         Me.CheckBox11.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox11.TabIndex = 294
@@ -1807,7 +1807,7 @@ Partial Class Form1
         '
         'CheckBox10
         '
-        Me.CheckBox10.Location = New System.Drawing.Point(216, 95)
+        Me.CheckBox10.Location = New System.Drawing.Point(216, 101)
         Me.CheckBox10.Name = "CheckBox10"
         Me.CheckBox10.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox10.TabIndex = 293
@@ -1816,7 +1816,7 @@ Partial Class Form1
         '
         'CheckBox9
         '
-        Me.CheckBox9.Location = New System.Drawing.Point(1672, 66)
+        Me.CheckBox9.Location = New System.Drawing.Point(1672, 64)
         Me.CheckBox9.Name = "CheckBox9"
         Me.CheckBox9.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox9.TabIndex = 292
@@ -1825,7 +1825,7 @@ Partial Class Form1
         '
         'CheckBox8
         '
-        Me.CheckBox8.Location = New System.Drawing.Point(1464, 66)
+        Me.CheckBox8.Location = New System.Drawing.Point(1464, 64)
         Me.CheckBox8.Name = "CheckBox8"
         Me.CheckBox8.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox8.TabIndex = 291
@@ -1834,7 +1834,7 @@ Partial Class Form1
         '
         'CheckBox7
         '
-        Me.CheckBox7.Location = New System.Drawing.Point(1256, 66)
+        Me.CheckBox7.Location = New System.Drawing.Point(1256, 64)
         Me.CheckBox7.Name = "CheckBox7"
         Me.CheckBox7.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox7.TabIndex = 290
@@ -1843,7 +1843,7 @@ Partial Class Form1
         '
         'CheckBox6
         '
-        Me.CheckBox6.Location = New System.Drawing.Point(1048, 66)
+        Me.CheckBox6.Location = New System.Drawing.Point(1048, 64)
         Me.CheckBox6.Name = "CheckBox6"
         Me.CheckBox6.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox6.TabIndex = 289
@@ -1852,7 +1852,7 @@ Partial Class Form1
         '
         'CheckBox5
         '
-        Me.CheckBox5.Location = New System.Drawing.Point(840, 66)
+        Me.CheckBox5.Location = New System.Drawing.Point(840, 64)
         Me.CheckBox5.Name = "CheckBox5"
         Me.CheckBox5.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox5.TabIndex = 288
@@ -1861,7 +1861,7 @@ Partial Class Form1
         '
         'CheckBox4
         '
-        Me.CheckBox4.Location = New System.Drawing.Point(632, 66)
+        Me.CheckBox4.Location = New System.Drawing.Point(632, 64)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox4.TabIndex = 287
@@ -1870,7 +1870,7 @@ Partial Class Form1
         '
         'CheckBox3
         '
-        Me.CheckBox3.Location = New System.Drawing.Point(424, 66)
+        Me.CheckBox3.Location = New System.Drawing.Point(424, 64)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox3.TabIndex = 286
@@ -1879,7 +1879,7 @@ Partial Class Form1
         '
         'CheckBox2
         '
-        Me.CheckBox2.Location = New System.Drawing.Point(216, 66)
+        Me.CheckBox2.Location = New System.Drawing.Point(216, 64)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox2.TabIndex = 285
@@ -1888,7 +1888,7 @@ Partial Class Form1
         '
         'CheckBox1
         '
-        Me.CheckBox1.Location = New System.Drawing.Point(8, 66)
+        Me.CheckBox1.Location = New System.Drawing.Point(8, 64)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(200, 23)
         Me.CheckBox1.TabIndex = 284
@@ -1917,7 +1917,7 @@ Partial Class Form1
         'btnCancel_perm
         '
         Me.btnCancel_perm.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnCancel_perm.Location = New System.Drawing.Point(154, 267)
+        Me.btnCancel_perm.Location = New System.Drawing.Point(164, 175)
         Me.btnCancel_perm.Name = "btnCancel_perm"
         Me.btnCancel_perm.Size = New System.Drawing.Size(140, 44)
         Me.btnCancel_perm.TabIndex = 281
@@ -1927,7 +1927,7 @@ Partial Class Form1
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(1319, 272)
+        Me.Label34.Location = New System.Drawing.Point(1385, 188)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(95, 19)
         Me.Label34.TabIndex = 279
@@ -1935,17 +1935,17 @@ Partial Class Form1
         '
         'txtQuery_perm
         '
-        Me.txtQuery_perm.Location = New System.Drawing.Point(1432, 269)
+        Me.txtQuery_perm.Location = New System.Drawing.Point(1489, 185)
         Me.txtQuery_perm.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.txtQuery_perm.Name = "txtQuery_perm"
-        Me.txtQuery_perm.Size = New System.Drawing.Size(168, 30)
+        Me.txtQuery_perm.Size = New System.Drawing.Size(250, 30)
         Me.txtQuery_perm.TabIndex = 278
         Me.txtQuery_perm.Tag = ""
         '
         'btnQuery_perm
         '
         Me.btnQuery_perm.BackColor = System.Drawing.Color.Lime
-        Me.btnQuery_perm.Location = New System.Drawing.Point(1612, 267)
+        Me.btnQuery_perm.Location = New System.Drawing.Point(1748, 175)
         Me.btnQuery_perm.Name = "btnQuery_perm"
         Me.btnQuery_perm.Size = New System.Drawing.Size(140, 44)
         Me.btnQuery_perm.TabIndex = 277
@@ -1994,16 +1994,16 @@ Partial Class Form1
         '
         Me.dgvPermissions.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.dgvPermissions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPermissions.Location = New System.Drawing.Point(8, 317)
+        Me.dgvPermissions.Location = New System.Drawing.Point(8, 235)
         Me.dgvPermissions.Name = "dgvPermissions"
         Me.dgvPermissions.RowTemplate.Height = 24
-        Me.dgvPermissions.Size = New System.Drawing.Size(1880, 648)
+        Me.dgvPermissions.Size = New System.Drawing.Size(1880, 720)
         Me.dgvPermissions.TabIndex = 270
         '
         'btnModify_perm
         '
         Me.btnModify_perm.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnModify_perm.Location = New System.Drawing.Point(8, 267)
+        Me.btnModify_perm.Location = New System.Drawing.Point(8, 175)
         Me.btnModify_perm.Name = "btnModify_perm"
         Me.btnModify_perm.Size = New System.Drawing.Size(140, 44)
         Me.btnModify_perm.TabIndex = 254
@@ -2015,18 +2015,49 @@ Partial Class Form1
         Me.tpLogOut.Location = New System.Drawing.Point(4, 54)
         Me.tpLogOut.Name = "tpLogOut"
         Me.tpLogOut.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpLogOut.Size = New System.Drawing.Size(1896, 973)
+        Me.tpLogOut.Size = New System.Drawing.Size(1896, 963)
         Me.tpLogOut.TabIndex = 22
         Me.tpLogOut.Text = "登  出"
         Me.tpLogOut.UseVisualStyleBackColor = True
+        '
+        'txtCode_manu
+        '
+        Me.txtCode_manu.Location = New System.Drawing.Point(545, 20)
+        Me.txtCode_manu.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.txtCode_manu.Name = "txtCode_manu"
+        Me.txtCode_manu.Size = New System.Drawing.Size(250, 30)
+        Me.txtCode_manu.TabIndex = 312
+        Me.txtCode_manu.Tag = "manu_code"
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Font = New System.Drawing.Font("標楷體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Label52.Location = New System.Drawing.Point(441, 23)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(95, 19)
+        Me.Label52.TabIndex = 313
+        Me.Label52.Text = "代    號"
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.ForeColor = System.Drawing.Color.Red
+        Me.Label53.Location = New System.Drawing.Point(416, 23)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(20, 19)
+        Me.Label53.TabIndex = 314
+        Me.Label53.Text = "*"
+        Me.Label53.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1904, 1031)
+        Me.ClientSize = New System.Drawing.Size(1904, 1021)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "豐原瓦斯會計系統 v0.2"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabPage21.ResumeLayout(False)
@@ -2196,7 +2227,6 @@ Partial Class Form1
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents flpPermissions As FlowLayoutPanel
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Label42 As Label
     Friend WithEvents TextBox5 As TextBox
@@ -2219,4 +2249,7 @@ Partial Class Form1
     Friend WithEvents Label48 As Label
     Friend WithEvents Label47 As Label
     Friend WithEvents Label46 As Label
+    Friend WithEvents Label53 As Label
+    Friend WithEvents txtCode_manu As TextBox
+    Friend WithEvents Label52 As Label
 End Class

@@ -18,13 +18,14 @@
         TabControl1.DrawMode = DrawMode.OwnerDrawFixed
 
         SetDataGridViewStyle(Me)
-
+        Dim dgvs = GetControlInParent(Of DataGridView)(Me)
+        dgvs.ForEach(Sub(dgv) AddHandler dgv.ColumnWidthChanged, AddressOf SaveDataGridWidth)
         '初始化各TabPage
         btnCancel_emp.PerformClick()
         btnCancel_perm_Click(btnCancel_perm, e)
         btnCancel_manu_Click(btnCancel_manu, e)
         btnCancel_cus_Click(btnCancel_cus, e)
-
+        ReadDataGridWidth(dgvs)
     End Sub
 
     Private Sub tpLogOut_Enter(sender As Object, e As EventArgs) Handles tpLogOut.Enter
@@ -47,8 +48,16 @@
     Private Sub btnInsert_emp_Click(sender As Object, e As EventArgs) Handles btnInsert_emp.Click
         Dim dic As Dictionary(Of String, String) = CheckEmployee(sender)
         If dic Is Nothing Then Exit Sub
+
+        Dim dicDup As New Dictionary(Of String, String) From {
+            {txtEmpName.Tag, txtEmpName.Text},
+            {txtEmpPhone.Tag, txtEmpPhone.Text}
+        }
+        If Not CheckDuplication($"SELECT * FROM employee", dicDup, dgvEmployee) Then Exit Sub
+
         If InserTable("employee", dic) Then
             btnCancel_emp.PerformClick()
+            btnCancel_perm_Click(btnCancel_perm, e)
             MsgBox("新增成功")
         End If
     End Sub
@@ -82,12 +91,6 @@
          }
         If Not CheckRequiredCol(dicReq) Then Return Nothing
 
-        Dim dicDup As New Dictionary(Of String, String) From {
-            {txtEmpName.Tag, txtEmpName.Text},
-            {txtEmpPhone.Tag, txtEmpPhone.Text}
-        }
-        If Not CheckDuplication($"SELECT * FROM employee", dicDup, dgvEmployee) Then Return Nothing
-
         Dim tp As TabPage = sender.Parent
         Dim dic As New Dictionary(Of String, String)
         dic = tp.Controls.OfType(Of Control).Where(Function(ctrl) Not String.IsNullOrEmpty(ctrl.Tag) AndAlso ctrl.Tag <> "emp_id" AndAlso Not String.IsNullOrWhiteSpace(ctrl.Text)).
@@ -101,15 +104,17 @@
         If MsgBox("確定要刪除?", vbYesNo, "警告") = MsgBoxResult.No Then Exit Sub
         If DeleteData("employee", $"{txtID_emp.Tag} = '{txtID_emp.Text}'") Then
             btnCancel_emp.PerformClick()
+            btnCancel_perm_Click(btnCancel_perm, e)
             MsgBox("刪除成功")
         End If
     End Sub
 
     '員工管理-查詢
     Private Sub btnQuery_cus_Click(sender As Object, e As EventArgs) Handles btnQuery_emp.Click
+        Cursor = Cursors.WaitCursor
         GetDataToDgv($"SELECT * FROM employee WHERE emp_name LIKE '%{txtQuery_emp.Text}%' OR emp_phone LIKE '%{txtQuery_emp.Text}%'", dgvEmployee)
         dgvEmployee.Columns("emp_perm").Visible = False
-        MsgBox("查詢完畢")
+        Cursor = Cursors.Default
     End Sub
 
     '搜尋欄位按下"Enter"即可搜尋
@@ -163,16 +168,17 @@
 
     '權限管理-查詢
     Private Sub btnQuery_perm_Click(sender As Object, e As EventArgs) Handles btnQuery_perm.Click
+        Cursor = Cursors.WaitCursor
         GetDataToDgv($"SELECT emp_id, emp_name, emp_acc, emp_perm FROM employee WHERE emp_name LIKE '%{txtQuery_perm.Text}%' OR emp_acc LIKE '%{txtQuery_perm.Text}%'", dgvPermissions)
         dgvPermissions.Columns("emp_perm").Visible = False
-        MsgBox("查詢完畢")
+        Cursor = Cursors.Default
     End Sub
 
     '廠商管理-取消
     Private Sub btnCancel_manu_Click(sender As Object, e As EventArgs) Handles btnCancel_manu.Click
         Dim tp = sender.Parent
         ClearControls(tp)
-        GetDataToDgv("SELECT * FROM manufacturer", dgvManufacturer)
+        GetDataToDgv("SELECT * FROM manufacturer ORDER BY manu_code", dgvManufacturer)
         btnInsert_manu.Enabled = True
         btnModify_manu.Enabled = False
         btnDelete_manu.Enabled = False
@@ -182,6 +188,13 @@
     Private Sub btnInsert_menu_Click(sender As Object, e As EventArgs) Handles btnInsert_manu.Click
         Dim dic As Dictionary(Of String, String) = CheckManufacturer(sender)
         If dic Is Nothing Then Exit Sub
+
+        Dim dicDup As New Dictionary(Of String, String) From {
+            {txtName_menu.Tag, txtName_menu.Text},
+            {txtphone1_menu.Tag, txtphone1_menu.Text}
+        }
+        If Not CheckDuplication($"SELECT * FROM manufacturer", dicDup, dgvManufacturer) Then Exit Sub
+
         If InserTable("manufacturer", dic) Then
             btnCancel_manu.PerformClick()
             MsgBox("新增成功")
@@ -220,23 +233,21 @@
 
     '廠商管理-查詢
     Private Sub btnQuery_manu_Click(sender As Object, e As EventArgs) Handles btnQuery_manu.Click
-        GetDataToDgv($"SELECT * FROM manufacturer WHERE manu_name LIKE '%{txtQuery_manu.Text}%' OR manu_phone1 LIKE '%{txtQuery_manu.Text}%'", dgvManufacturer)
-        MsgBox("查詢完畢")
+        Cursor = Cursors.WaitCursor
+        GetDataToDgv("SELECT * FROM manufacturer " +
+                                $"WHERE manu_name LIKE '%{txtQuery_manu.Text}%' OR manu_phone1 LIKE '%{txtQuery_manu.Text}%' " +
+                                $"OR manu_phone2 LIKE '%{txtQuery_manu.Text}%' OR manu_code LIKE '%{txtQuery_manu.Text}%'", dgvManufacturer)
+        Cursor = Cursors.Default
     End Sub
 
     Private Function CheckManufacturer(sender As Button)
         Dim dicReq As New Dictionary(Of String, Object) From {
              {"名稱", txtName_menu},
              {"聯絡人", txtContact_manu},
+             {"代號", txtCode_manu},
              {"電話1", txtphone1_menu}
          }
         If Not CheckRequiredCol(dicReq) Then Return Nothing
-
-        Dim dicDup As New Dictionary(Of String, String) From {
-            {txtName_menu.Tag, txtName_menu.Text},
-            {txtphone1_menu.Tag, txtphone1_menu.Text}
-        }
-        If Not CheckDuplication($"SELECT * FROM manufacturer", dicDup, dgvManufacturer) Then Return Nothing
 
         Dim tp As TabPage = sender.Parent
         Dim dic As New Dictionary(Of String, String)
@@ -258,6 +269,13 @@
     Private Sub btnInsert_cus_Click(sender As Object, e As EventArgs) Handles btnInsert_cus.Click
         Dim dic As Dictionary(Of String, String) = CheckCustomer(sender)
         If dic Is Nothing Then Exit Sub
+
+        Dim dicDup As New Dictionary(Of String, String) From {
+            {txtName_cus.Tag, txtName_cus.Text},
+            {txtPhone1_cus.Tag, txtPhone1_cus.Text}
+        }
+        If Not CheckDuplication($"SELECT * FROM customer", dicDup, dgvCustomer) Then Exit Sub
+
         If InserTable("customer", dic) Then
             btnCancel_cus.PerformClick()
             MsgBox("新增成功")
@@ -271,12 +289,6 @@
              {"電話1", txtPhone1_cus}
          }
         If Not CheckRequiredCol(dicReq) Then Return Nothing
-
-        Dim dicDup As New Dictionary(Of String, String) From {
-            {txtName_cus.Tag, txtName_cus.Text},
-            {txtPhone1_cus.Tag, txtPhone1_cus.Text}
-        }
-        If Not CheckDuplication($"SELECT * FROM customer", dicDup, dgvCustomer) Then Return Nothing
 
         Dim tp As TabPage = sender.Parent
         Dim dic As New Dictionary(Of String, String)
@@ -316,8 +328,9 @@
 
     '客戶管理-查詢
     Private Sub btnQuery_cus_Click_1(sender As Object, e As EventArgs) Handles btnQuery_cus.Click
+        Cursor = Cursors.WaitCursor
         GetDataToDgv($"SELECT * FROM customer WHERE cus_name LIKE '%{txtQuery_cus.Text}%' OR cus_phone1 LIKE '%{txtQuery_cus.Text}%'", dgvCustomer)
-        MsgBox("查詢完畢")
+        Cursor = Cursors.Default
     End Sub
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
