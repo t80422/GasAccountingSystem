@@ -85,9 +85,7 @@
     Private Function CheckEmployee(sender As Button) As Dictionary(Of String, String)
         Dim dicReq As New Dictionary(Of String, Object) From {
              {"姓名", txtEmpName},
-             {"連絡電話", txtEmpPhone},
-             {"帳號", txtAcc},
-             {"密碼", txtPsw}
+             {"連絡電話", txtEmpPhone}
          }
         If Not CheckRequiredCol(dicReq) Then Return Nothing
 

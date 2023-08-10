@@ -130,8 +130,6 @@ Partial Class Form1
         Me.dgvManufacturer = New System.Windows.Forms.DataGridView()
         Me.tpEmployee = New System.Windows.Forms.TabPage()
         Me.txtBirthday = New System.Windows.Forms.TextBox()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
         Me.Label43 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
@@ -1341,8 +1339,6 @@ Partial Class Form1
         'tpEmployee
         '
         Me.tpEmployee.Controls.Add(Me.txtBirthday)
-        Me.tpEmployee.Controls.Add(Me.Label45)
-        Me.tpEmployee.Controls.Add(Me.Label44)
         Me.tpEmployee.Controls.Add(Me.Label43)
         Me.tpEmployee.Controls.Add(Me.Label28)
         Me.tpEmployee.Controls.Add(Me.Label38)
@@ -1387,28 +1383,6 @@ Partial Class Form1
         Me.txtBirthday.Size = New System.Drawing.Size(250, 30)
         Me.txtBirthday.TabIndex = 281
         Me.txtBirthday.Tag = "emp_birthday"
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.ForeColor = System.Drawing.Color.Red
-        Me.Label45.Location = New System.Drawing.Point(1210, 69)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(20, 19)
-        Me.Label45.TabIndex = 280
-        Me.Label45.Text = "*"
-        Me.Label45.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.ForeColor = System.Drawing.Color.Red
-        Me.Label44.Location = New System.Drawing.Point(1210, 23)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(20, 19)
-        Me.Label44.TabIndex = 279
-        Me.Label44.Text = "*"
-        Me.Label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label43
         '
@@ -2092,7 +2066,7 @@ Partial Class Form1
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "豐原瓦斯會計系統 v0.4"
+        Me.Text = "豐原瓦斯會計系統 v0.5"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabPage21.ResumeLayout(False)
         Me.TabControl2.ResumeLayout(False)
@@ -2272,8 +2246,6 @@ Partial Class Form1
     Friend WithEvents Label38 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label37 As Label
-    Friend WithEvents Label45 As Label
-    Friend WithEvents Label44 As Label
     Friend WithEvents Label43 As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents Label51 As Label
