@@ -36,7 +36,7 @@
     Private Sub btnCancel_emp_Click(sender As Object, e As EventArgs) Handles btnCancel_emp.Click
         Dim tp = sender.Parent
         ClearControls(tp)
-        GetDataToDgv("SELECT emp_id,  emp_name,  emp_phone,  emp_address,  emp_ecp,  emp_ect,  emp_acc,  emp_psw, emp_identity_number, emp_birthday FROM employee", dgvEmployee)
+        GetDataToDgv("SELECT emp_id,  emp_name,  emp_phone,  emp_address,  emp_ecp,  emp_ect,  emp_acc,  emp_psw, emp_identity_number, DATE_FORMAT(emp_birthday,'%Y/%m/%d') emp_birthday FROM employee", dgvEmployee)
         btnInsert_emp.Enabled = True
         btnModify_emp.Enabled = False
         btnDelete_emp.Enabled = False
@@ -90,6 +90,14 @@
              {"密碼", txtPsw}
          }
         If Not CheckRequiredCol(dicReq) Then Return Nothing
+
+        '輸入格式防呆
+        Dim d As Date
+        If Not String.IsNullOrWhiteSpace(txtBirthday.Text) AndAlso Not Date.TryParse(txtBirthday.Text, d) Then
+            MsgBox("生日 格式錯誤")
+            txtBirthday.Focus()
+            Return Nothing
+        End If
 
         Dim tp As TabPage = sender.Parent
         Dim dic As New Dictionary(Of String, String)
@@ -157,9 +165,10 @@
     '權限管理-修改
     Private Sub btnModify_perm_Click(sender As Object, e As EventArgs) Handles btnModify_perm.Click
         Dim perms = String.Join(",", tpPermissions.Controls.OfType(Of CheckBox).Where(Function(chk) chk.Checked).Select(Function(chk) chk.Text))
-        'Dim perms = String.Join(",", flpPermissions.Controls.OfType(Of CheckBox).Select(Function(chk) If(chk.Checked, "1", "0")))
 
-        Dim dic As New Dictionary(Of String, String) From {{"emp_perm", perms}}
+        Dim dic As New Dictionary(Of String, String) From {
+            {"emp_perm", perms}
+        }
         If UpdateTable("employee", dic, $"{txtID_perm.Tag} = '{txtID_perm.Text}'") Then
             btnCancel_perm.PerformClick()
             MsgBox("修改成功")
@@ -259,7 +268,7 @@
     '客戶管理-取消
     Private Sub btnCancel_cus_Click(sender As Object, e As EventArgs) Handles btnCancel_cus.Click
         ClearControls(sender.Parent)
-        GetDataToDgv("SELECT * FROM customer", dgvCustomer)
+        GetDataToDgv("SELECT * FROM customer ORDER BY cus_code", dgvCustomer)
         btnInsert_cus.Enabled = True
         btnModify_cus.Enabled = False
         btnDelete_cus.Enabled = False
@@ -286,6 +295,7 @@
         Dim dicReq As New Dictionary(Of String, Object) From {
              {"名稱", txtName_cus},
              {"聯絡人", txtContact_cus},
+             {"代號", txtCode_cus},
              {"電話1", txtPhone1_cus}
          }
         If Not CheckRequiredCol(dicReq) Then Return Nothing
@@ -329,7 +339,9 @@
     '客戶管理-查詢
     Private Sub btnQuery_cus_Click_1(sender As Object, e As EventArgs) Handles btnQuery_cus.Click
         Cursor = Cursors.WaitCursor
-        GetDataToDgv($"SELECT * FROM customer WHERE cus_name LIKE '%{txtQuery_cus.Text}%' OR cus_phone1 LIKE '%{txtQuery_cus.Text}%'", dgvCustomer)
+        GetDataToDgv("SELECT * FROM customer " +
+                                $"WHERE cus_name LIKE '%{txtQuery_cus.Text}%' OR cus_phone1 LIKE '%{txtQuery_cus.Text}%' " +
+                                $"OR cus_phone2 LIKE '%{txtQuery_cus.Text}%' OR cus_code LIKE '%{txtQuery_cus.Text}%'", dgvCustomer)
         Cursor = Cursors.Default
     End Sub
 
